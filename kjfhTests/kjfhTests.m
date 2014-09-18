@@ -2,8 +2,8 @@
 //  kjfhTests.m
 //  kjfhTests
 //
-//  Created by 张爱民 on 14/9/9.
-//  Copyright (c) 2014年 爱卡汽车. All rights reserved.
+//  Created by ZhangAimin on 14/9/9.
+//  Copyright (c) 2014年 自由开发者. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

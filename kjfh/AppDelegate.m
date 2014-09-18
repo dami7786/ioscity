@@ -2,17 +2,59 @@
 //  AppDelegate.m
 //  kjfh
 //
-//  Created by 张爱民 on 14/9/9.
-//  Copyright (c) 2014年 爱卡汽车. All rights reserved.
+//  Created by ZhangAimin on 14/9/9.
+//  Copyright (c) 2014年 自由开发者. All rights reserved.
 //
 
 #import "AppDelegate.h"
+
+#import "HomeViewController.h"
+
+#import "LeftViewController.h"
+
+#import "MMDrawerController.h"
+
+@interface AppDelegate ()
+
+@property (nonatomic,strong) MMDrawerController * drawerController;
+
+@end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+
+    LeftViewController *leftViewController = [[LeftViewController alloc]init];
+    
+    HomeViewController *homeViewController = [[HomeViewController alloc]init];
+    
+    UINavigationController *homeNavController = [[UINavigationController alloc]initWithRootViewController:homeViewController];
+    
+    self.drawerController = [[MMDrawerController alloc]initWithCenterViewController:homeNavController leftDrawerViewController:leftViewController];
+    
+    [self.drawerController setMaximumRightDrawerWidth:200.0];
+    
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+
+    [self.drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController,MMDrawerSide drawerSide, CGFloat percentVisible) {
+        
+     }];
+
+    
+    self.window.rootViewController = self.drawerController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 							

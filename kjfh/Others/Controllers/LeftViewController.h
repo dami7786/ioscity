@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  LeftViewController.h
 //  kjfh
 //
 //  Created by ZhangAimin on 14/9/9.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface LeftViewController : UITableViewController
 
 @end
