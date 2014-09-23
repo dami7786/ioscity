@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3FD53937-04F7-4FBA-8990-7BB31426E874</string>
+	<key>IDESourceControlProjectName</key>
+	<string>kjfh</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>567A47A8ABE817D4BCA07F4CBC167DD04E48A739</key>
+		<string>https://bitbucket.org/dami7786/xhkjy.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>kjfh.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>567A47A8ABE817D4BCA07F4CBC167DD04E48A739</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/dami7786/xhkjy.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>567A47A8ABE817D4BCA07F4CBC167DD04E48A739</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>567A47A8ABE817D4BCA07F4CBC167DD04E48A739</string>
+			<key>IDESourceControlWCCName</key>
+			<string>kjfh</string>
+		</dict>
+	</array>
+</dict>
+</plist>
