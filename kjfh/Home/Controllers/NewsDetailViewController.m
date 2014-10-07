@@ -52,6 +52,7 @@
     _webView = [[UIWebView alloc]init];
     self.webView.delegate = self;
     self.webView.opaque = NO;
+    self.webView.scrollView.decelerationRate = 1;
     self.webView.dataDetectorTypes = UIDataDetectorTypeNone;
     self.webView.scalesPageToFit = YES;
     self.webView.backgroundColor = UIColorFromRGB(0xF2F1ED);
