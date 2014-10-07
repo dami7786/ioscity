@@ -8,13 +8,13 @@
 
 #import "LeftViewCell.h"
 
-NSInteger const KLeftViewCellDefaultHeiht = 42;
+NSInteger const KLeftViewCellDefaultHeiht = 45;
 
 const NSInteger KSpace8 = 8;
 
 @interface LeftViewCell()
 
-@property (nonatomic,strong)UIView *holderView;
+@property (nonatomic,strong)UIImageView *holderView;
 
 @property (nonatomic,strong)UIView *sepLine;
 
@@ -25,79 +25,78 @@ const NSInteger KSpace8 = 8;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-
-    if (self) {
     
+    if (self) {
+        
         self.backgroundColor = [UIColor clearColor];
-        
         self.contentView.backgroundColor = [UIColor clearColor];
-        
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        _holderView = [[UIView alloc]initWithFrame:CGRectMake(KSpace8, 0, SCREEN_WIDTH - 2 * KSpace8 - 40, KLeftViewCellDefaultHeiht)];
+        _holderView = [[UIImageView alloc]init];
+        self.holderView.image = [UIImage imageNamed:@"set_cell_bg_single"];
+//        self.holderView.layer.borderWidth = 1;
+//        self.holderView.layer.borderColor = [UIColorFromRGB(0xc6c6c6) CGColor];
+//        self.holderView.backgroundColor = [UIColor whiteColor];
+//        self.holderView.layer.shadowRadius = 3;
+        [self.contentView addSubview:self.holderView];
+        _holderView.frame = CGRectMake(KSpace8, 0, 260, KLeftViewCellDefaultHeiht);
+        
+        //自动布局
+//        [self.holderView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.contentView.mas_left);//.offset(KSpace8);
+//            make.right.equalTo(self.contentView.right);//.offset(-KSpace8);
+//            make.top.equalTo(self.contentView.top);
+//            make.bottom.equalTo(self.contentView.bottom);
+//        }];
+        //图片
+        _headIamgeView = [[UIImageView alloc]init];
+        self.headIamgeView.contentMode = UIViewContentModeCenter;
+        self.headIamgeView.backgroundColor = [UIColor clearColor];
+        [self.holderView addSubview:self.headIamgeView];
+        _headIamgeView.center = CGPointMake(3*KSpace8, _holderView.center.y);
+//        [self.headIamgeView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.centerY.equalTo(self.holderView);
+//            make.left.equalTo(self.holderView).offset(KSpace8);
+//        }];
 
-        _holderView.layer.borderWidth = 1;
-        
-        _holderView.layer.borderColor = [UIColorFromRGB(0xc6c6c6) CGColor];
-        
-        _holderView.backgroundColor = [UIColor whiteColor];
-        
-        _holderView.layer.shadowRadius = 3;
-        
-        [self.contentView addSubview:_holderView];
-        
-        _headIamgeView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, KLeftViewCellDefaultHeiht, KLeftViewCellDefaultHeiht)];
+        //标题
+        _titleLabel = [[UILabel alloc]init];//WithFrame:CGRectMake(50, 0, _holderView.frame.size.width - 100, KLeftViewCellDefaultHeiht)];
+        self.titleLabel.backgroundColor = [UIColor clearColor];
+        self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
+        self.titleLabel.textAlignment = NSTextAlignmentLeft;
+        self.titleLabel.textColor = UIColorFromRGB(0x666666);
+        [self.holderView addSubview:self.titleLabel];
+        _titleLabel.frame = CGRectMake(40, 0, 200, KLeftViewCellDefaultHeiht);
+//        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.centerY.equalTo(self.holderView);
+//            make.left.equalTo(self.headIamgeView).offset(KSpace8);
+//        }];
 
-        _headIamgeView.contentMode = UIViewContentModeCenter;
         
-        _headIamgeView.backgroundColor = [UIColor clearColor];
-        
-        [self.holderView addSubview:_headIamgeView];
-        
-        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 0, _holderView.frame.size.width - 100, KLeftViewCellDefaultHeiht)];
-        
-        _titleLabel.backgroundColor = [UIColor clearColor];
-        
-        _titleLabel.font = [UIFont boldSystemFontOfSize:17];
-        
-        _titleLabel.textAlignment = NSTextAlignmentLeft;
-        
-        _titleLabel.textColor = UIColorFromRGB(0x666666);
-        
-        [self.holderView addSubview:_titleLabel];
     }
     return self;
 }
 
 -(void)setIndex:(NSInteger)index{
-
     _index = index;
-    
-        
-        if (_index != 0 && _sepLine == nil) {
-
-            _sepLine = [[UIView alloc]initWithFrame:CGRectMake(0, -1, _holderView.frame.size.width, 1)];
-            
-            _sepLine.backgroundColor = [UIColor redColor];
-            
-            [self.holderView addSubview:_sepLine];
-        }
-    
+    if (_index != 0 && _sepLine == nil) {
+        _sepLine = [[UIView alloc]initWithFrame:CGRectMake(0, -1, _holderView.frame.size.width, 1)];
+        _sepLine.backgroundColor = [UIColor redColor];
+        [self.holderView addSubview:_sepLine];
+    }
     _sepLine.hidden = _index == 0;
-    
 }
 
 -(void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated{
- 
-    [super setHighlighted:highlighted animated:animated];
     
+    [super setHighlighted:highlighted animated:animated];
     
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

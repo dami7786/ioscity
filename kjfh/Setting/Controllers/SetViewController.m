@@ -7,7 +7,7 @@
 //
 
 #import "SetViewController.h"
-
+#import "UIViewController+MMDrawerController.h"
 @interface SetViewController ()
 
 @end
@@ -26,7 +26,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self initNavBar];
+}
+
+//设置导航栏
+- (void)initNavBar {
+    
+    //左侧按钮
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
+    [btn addTarget:self  action:@selector(leftDrawerButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setImage:[UIImage imageNamed:@"back_btn2.png"] forState:UIControlStateNormal];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    [self.navigationItem setLeftBarButtonItem:leftButton animated:YES];
+    //标题
+    UILabel *titleLabel = [[UILabel alloc]init];
+    titleLabel.text = @"设置";
+    titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.textColor = RGB(66, 66, 66);
+    titleLabel.backgroundColor = [UIColor clearColor];
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+}
+
+#pragma mark - Actions
+-(void)leftDrawerButtonPress:(UIButton *)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft
+                                      animated:YES
+                                    completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +63,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

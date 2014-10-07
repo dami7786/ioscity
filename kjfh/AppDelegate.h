@@ -11,5 +11,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+/**
+ 是否可以转屏
+ */
+@property (nonatomic,assign) BOOL shouldAutorate;
 
 @end
