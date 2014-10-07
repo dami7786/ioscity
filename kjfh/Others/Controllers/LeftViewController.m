@@ -20,11 +20,14 @@
 #import "UIViewController+MMDrawerController.h"
 
 #import "UMFeedback.h"
-@interface LeftViewController ()
+@interface LeftViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) NSArray *images;
 
 @property (nonatomic,strong) NSArray *titles;
+
+@property (nonatomic,strong) UITableView *tableView;
+
 
 @end
 
@@ -42,14 +45,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     self.view.backgroundColor = UIColorFromRGB(0xf2f1ed);
+    
+    [self initMain];
+}
+-(void)initMain{
+
+    _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     self.tableView.scrollEnabled = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, StatusBar_HEIGHT + NavigationBar_HEIGHT)];
     tableHeaderView.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = tableHeaderView;
+    [self.view addSubview:_tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -59,12 +74,12 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 4;
+    return 5;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return section == 1 ? 2 : 1;
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -74,8 +89,8 @@
     if (cell == nil) {
         cell = [[LeftViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.headIamgeView.image = [UIImage imageNamed:self.images[indexPath.section][indexPath.row]];
-    cell.titleLabel.text = self.titles[indexPath.section][indexPath.row];
+    cell.headIamgeView.image = [UIImage imageNamed:self.images[indexPath.section]];
+    cell.titleLabel.text = self.titles[indexPath.section];
     cell.index = indexPath.row;
     return cell;
 }
@@ -98,7 +113,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     //设置
-    if (indexPath.row == 0 && indexPath.section == 2) {
+    if (indexPath.row == 0 && indexPath.section == 3) {
         SetViewController *setViewController =  [[SetViewController alloc]init];
         UINavigationController *setNavController =  [[UINavigationController alloc]initWithRootViewController:setViewController];
         self.mm_drawerController.centerViewController = setNavController;
@@ -116,7 +131,7 @@
     }
     
     //重点企业
-    if (indexPath.row == 0 && indexPath.section == 3) {
+    if (indexPath.row == 0 && indexPath.section == 4) {
 
         [UMFeedback showFeedback:self withAppkey:@"" dictionary:nil];
 //        HomeViewController *homeViewController = [[HomeViewController alloc]init];
@@ -130,7 +145,7 @@
 -(NSArray *)images{
     
     if (_images == nil) {
-        _images = @[@[@"home.png"],@[@"fav.png",@"application.png"],@[@"set.png"],@[@"qiye.png"]];
+        _images = @[@"home.png",@"fav.png",@"application.png",@"set.png",@"qiye.png"];
     }
     return _images;
 }
@@ -138,7 +153,7 @@
 -(NSArray *)titles{
     
     if (_titles == nil) {
-        _titles = @[@[@"首页"],@[@"收藏",@"推荐应用"],@[@"设置"],@[@"重点企业"]];
+        _titles = @[@"首页",@"收藏",@"推荐应用",@"设置",@"重点企业"];
     }
     return _titles;
 }

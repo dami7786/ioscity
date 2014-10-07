@@ -33,44 +33,44 @@ const NSInteger KSpace8 = 8;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         _holderView = [[UIImageView alloc]init];
-        self.holderView.image = [UIImage imageNamed:@"set_cell_bg_single"];
-//        self.holderView.layer.borderWidth = 1;
-//        self.holderView.layer.borderColor = [UIColorFromRGB(0xc6c6c6) CGColor];
-//        self.holderView.backgroundColor = [UIColor whiteColor];
-//        self.holderView.layer.shadowRadius = 3;
+//        self.holderView.image = [UIImage imageNamed:@"set_cell_bg_single"];
+        self.holderView.layer.borderWidth = 0.5;
+        self.holderView.layer.borderColor = UIColorFromRGB(0xc6c6c6).CGColor;
+        self.holderView.backgroundColor = [UIColor whiteColor];
+        self.holderView.layer.shadowRadius = 3;
+        self.holderView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        self.holderView.layer.shadowOpacity = 2;
         [self.contentView addSubview:self.holderView];
-        _holderView.frame = CGRectMake(KSpace8, 0, 260, KLeftViewCellDefaultHeiht);
         
         //自动布局
-//        [self.holderView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.equalTo(self.contentView.mas_left);//.offset(KSpace8);
-//            make.right.equalTo(self.contentView.right);//.offset(-KSpace8);
-//            make.top.equalTo(self.contentView.top);
-//            make.bottom.equalTo(self.contentView.bottom);
-//        }];
+        [self.holderView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView.mas_left).offset(KSpace8);
+            make.right.equalTo(self.contentView.right).offset(-KSpace8);
+            make.top.equalTo(self.contentView.top);
+            make.bottom.equalTo(self.contentView.bottom);
+        }];
         //图片
         _headIamgeView = [[UIImageView alloc]init];
         self.headIamgeView.contentMode = UIViewContentModeCenter;
         self.headIamgeView.backgroundColor = [UIColor clearColor];
         [self.holderView addSubview:self.headIamgeView];
-        _headIamgeView.center = CGPointMake(3*KSpace8, _holderView.center.y);
-//        [self.headIamgeView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.centerY.equalTo(self.holderView);
-//            make.left.equalTo(self.holderView).offset(KSpace8);
-//        }];
+        [self.headIamgeView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.holderView);
+            make.left.equalTo(self.holderView).offset(KSpace8);
+        }];
 
         //标题
-        _titleLabel = [[UILabel alloc]init];//WithFrame:CGRectMake(50, 0, _holderView.frame.size.width - 100, KLeftViewCellDefaultHeiht)];
+        _titleLabel = [[UILabel alloc]init];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.titleLabel.textColor = UIColorFromRGB(0x666666);
         [self.holderView addSubview:self.titleLabel];
-        _titleLabel.frame = CGRectMake(40, 0, 200, KLeftViewCellDefaultHeiht);
-//        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.centerY.equalTo(self.holderView);
-//            make.left.equalTo(self.headIamgeView).offset(KSpace8);
-//        }];
+
+        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.holderView);
+            make.left.equalTo(self.headIamgeView.mas_right).offset(KSpace8);
+        }];
 
         
     }
