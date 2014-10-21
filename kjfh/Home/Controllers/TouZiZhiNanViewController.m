@@ -47,8 +47,9 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
     self.navigationItem.titleView = titleLabel;
 }
 -(void)initMain{
-    TouZiZhiNanLayout *layout = [[TouZiZhiNanLayout alloc]init];
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.backgroundColor = UIColorFromRGB(0xF2F1ED);

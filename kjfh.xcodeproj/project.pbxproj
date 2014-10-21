@@ -91,6 +91,14 @@
 		374C89B119DBB28F00748FA7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 374C89B019DBB28F00748FA7 /* libsqlite3.dylib */; };
 		374C89B319DBB29600748FA7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374C89B219DBB29600748FA7 /* CoreTelephony.framework */; };
 		374C89B519DBB29E00748FA7 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 374C89B419DBB29E00748FA7 /* libstdc++.dylib */; };
+		375239B519F3B05E0081A7A4 /* Snippets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 375239B419F3B05E0081A7A4 /* Snippets.plist */; };
+		375239B719F3B1680081A7A4 /* README.html in Resources */ = {isa = PBXBuildFile; fileRef = 375239B619F3B1680081A7A4 /* README.html */; };
+		37523B7519F3B3EF0081A7A4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7419F3B3EF0081A7A4 /* libxml2.dylib */; };
+		37523B7719F3B3FE0081A7A4 /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7619F3B3FE0081A7A4 /* libbz2.dylib */; };
+		37523B7919F3B4230081A7A4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7819F3B4230081A7A4 /* CoreText.framework */; };
+		37523B7B19F3B42E0081A7A4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7A19F3B42E0081A7A4 /* ImageIO.framework */; };
+		37523B7D19F3B52D0081A7A4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7C19F3B52D0081A7A4 /* MobileCoreServices.framework */; };
+		37523B7F19F3B5410081A7A4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7E19F3B5410081A7A4 /* MediaPlayer.framework */; };
 		376652DA19BF217C0038419C /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 376652D219BF217C0038419C /* MMDrawerBarButtonItem.m */; };
 		376652DB19BF217C0038419C /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376652D519BF217C0038419C /* MMDrawerController.m */; };
 		376652DC19BF217C0038419C /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 376652D719BF217C0038419C /* MMDrawerVisualState.m */; };
@@ -102,6 +110,20 @@
 		3766537319BF38E50038419C /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3766537219BF38E50038419C /* SetViewController.m */; };
 		3766537619BF38FC0038419C /* TuijianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3766537519BF38FC0038419C /* TuijianViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		37523B8119F3B7650081A7A4 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.css";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"${INPUT_FILE_BASE}.css.c",
+			);
+			script = "cd \"$INPUT_FILE_DIR\"  # move into file dir, otherwise xxd takes the full path for the symbol\n/usr/bin/xxd -i \"$INPUT_FILE_NAME\" \"$DERIVED_SOURCES_DIR/$INPUT_FILE_BASE.css.c\" # builds a c file with a hex array";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		3701B43E19BF1D97004F1955 /* PBXContainerItemProxy */ = {
@@ -274,6 +296,17 @@
 		374C89B019DBB28F00748FA7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		374C89B219DBB29600748FA7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		374C89B419DBB29E00748FA7 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		374FD34B19F3C1F30066C578 /* Static_Library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Static_Library.h; sourceTree = "<group>"; };
+		374FD34D19F3C1F30066C578 /* Static_Library.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Static_Library.m; sourceTree = "<group>"; };
+		374FD35619F3C1F30066C578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		375239B419F3B05E0081A7A4 /* Snippets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Snippets.plist; sourceTree = "<group>"; };
+		375239B619F3B1680081A7A4 /* README.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README.html; sourceTree = "<group>"; };
+		37523B7419F3B3EF0081A7A4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		37523B7619F3B3FE0081A7A4 /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
+		37523B7819F3B4230081A7A4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		37523B7A19F3B42E0081A7A4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		37523B7C19F3B52D0081A7A4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		37523B7E19F3B5410081A7A4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		376652D119BF217C0038419C /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
 		376652D219BF217C0038419C /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
 		376652D319BF217C0038419C /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
@@ -303,8 +336,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				370591A319E231360043FC1B /* libSocialQQ.a in Frameworks */,
+				37523B7F19F3B5410081A7A4 /* MediaPlayer.framework in Frameworks */,
+				37523B7D19F3B52D0081A7A4 /* MobileCoreServices.framework in Frameworks */,
+				3701B41E19BF1D97004F1955 /* CoreGraphics.framework in Frameworks */,
+				37523B7B19F3B42E0081A7A4 /* ImageIO.framework in Frameworks */,
+				37523B7919F3B4230081A7A4 /* CoreText.framework in Frameworks */,
+				374C89AF19DBB28200748FA7 /* SystemConfiguration.framework in Frameworks */,
+				37523B7719F3B3FE0081A7A4 /* libbz2.dylib in Frameworks */,
 				374C89A919DBAC9500748FA7 /* libz.dylib in Frameworks */,
+				37523B7519F3B3EF0081A7A4 /* libxml2.dylib in Frameworks */,
+				370591A319E231360043FC1B /* libSocialQQ.a in Frameworks */,
 				374C89B519DBB29E00748FA7 /* libstdc++.dylib in Frameworks */,
 				370591A219E231360043FC1B /* libSocialSina.a in Frameworks */,
 				3705918919E22E170043FC1B /* libMobClickLibrary.a in Frameworks */,
@@ -313,8 +354,6 @@
 				370591A419E231360043FC1B /* TencentOpenAPI.framework in Frameworks */,
 				374C89B119DBB28F00748FA7 /* libsqlite3.dylib in Frameworks */,
 				3705918319E22E040043FC1B /* libUMFeedback.a in Frameworks */,
-				3701B41E19BF1D97004F1955 /* CoreGraphics.framework in Frameworks */,
-				374C89AF19DBB28200748FA7 /* SystemConfiguration.framework in Frameworks */,
 				370591A719E231360043FC1B /* libWeChatSDK.a in Frameworks */,
 				374C89AD19DBB27B00748FA7 /* libiconv.dylib in Frameworks */,
 				374C89AB19DBB27500748FA7 /* Security.framework in Frameworks */,
@@ -343,6 +382,8 @@
 			children = (
 				3701B42119BF1D97004F1955 /* kjfh */,
 				3701B44019BF1D97004F1955 /* kjfhTests */,
+				374FD34A19F3C1F30066C578 /* Static Library */,
+				374FD35419F3C1F30066C578 /* Static LibraryTests */,
 				3701B41A19BF1D97004F1955 /* Frameworks */,
 				3701B41919BF1D97004F1955 /* Products */,
 			);
@@ -360,6 +401,12 @@
 		3701B41A19BF1D97004F1955 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37523B7E19F3B5410081A7A4 /* MediaPlayer.framework */,
+				37523B7C19F3B52D0081A7A4 /* MobileCoreServices.framework */,
+				37523B7A19F3B42E0081A7A4 /* ImageIO.framework */,
+				37523B7819F3B4230081A7A4 /* CoreText.framework */,
+				37523B7619F3B3FE0081A7A4 /* libbz2.dylib */,
+				37523B7419F3B3EF0081A7A4 /* libxml2.dylib */,
 				374C89B419DBB29E00748FA7 /* libstdc++.dylib */,
 				374C89B219DBB29600748FA7 /* CoreTelephony.framework */,
 				374C89B019DBB28F00748FA7 /* libsqlite3.dylib */,
@@ -619,6 +666,31 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		374FD34A19F3C1F30066C578 /* Static Library */ = {
+			isa = PBXGroup;
+			children = (
+				374FD34B19F3C1F30066C578 /* Static_Library.h */,
+				374FD34D19F3C1F30066C578 /* Static_Library.m */,
+			);
+			path = "Static Library";
+			sourceTree = "<group>";
+		};
+		374FD35419F3C1F30066C578 /* Static LibraryTests */ = {
+			isa = PBXGroup;
+			children = (
+				374FD35519F3C1F30066C578 /* Supporting Files */,
+			);
+			path = "Static LibraryTests";
+			sourceTree = "<group>";
+		};
+		374FD35519F3C1F30066C578 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				374FD35619F3C1F30066C578 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		376652CD19BF217C0038419C /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -875,6 +947,8 @@
 		376652F719BF227F0038419C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				375239B619F3B1680081A7A4 /* README.html */,
+				375239B419F3B05E0081A7A4 /* Snippets.plist */,
 				3707100F19CB1CCF00D8CD7B /* UIImage+XCarExtend.h */,
 				3707101019CB1CCF00D8CD7B /* UIImage+XCarExtend.m */,
 				376652F819BF227F0038419C /* Comment.h */,
@@ -903,6 +977,7 @@
 				3701B41619BF1D97004F1955 /* Resources */,
 			);
 			buildRules = (
+				37523B8119F3B7650081A7A4 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -974,6 +1049,7 @@
 				3705917619E22DE00043FC1B /* UMSCommentDetailController.xib in Resources */,
 				3709893019E3838B00CFFB9C /* newsList.json in Resources */,
 				370591A519E231360043FC1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				375239B719F3B1680081A7A4 /* README.html in Resources */,
 				3701B43419BF1D97004F1955 /* Images.xcassets in Resources */,
 				3705917E19E22DE00043FC1B /* UMSocialSDKResourcesNew.bundle in Resources */,
 				3705917819E22DE00043FC1B /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -982,6 +1058,7 @@
 				3705917419E22DE00043FC1B /* UMSocialLocalizable.strings in Resources */,
 				3701B42619BF1D97004F1955 /* InfoPlist.strings in Resources */,
 				3705918419E22E050043FC1B /* umFeedback.bundle in Resources */,
+				375239B519F3B05E0081A7A4 /* Snippets.plist in Resources */,
 				3705917B19E22DE00043FC1B /* UMSLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1191,6 +1268,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kjfh/kjfh-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "kjfh/kjfh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1224,6 +1307,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kjfh/kjfh-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "kjfh/kjfh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (

@@ -9,7 +9,7 @@
 #import "ZaiLuShangViewController.h"
 #import "UMSocial.h"
 @interface ZaiLuShangViewController ()
-
+@property (nonatomic,strong) UIWebView *webView;
 @end
 
 @implementation ZaiLuShangViewController
@@ -18,6 +18,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initNavBar];
+    [self initMain];
+    NSString *readmePath = [[NSBundle mainBundle] pathForResource:@"README.html" ofType:nil];
+    NSString *html = [NSString stringWithContentsOfFile:readmePath encoding:NSUTF8StringEncoding error:NULL];
+    NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
+
+    [self.webView loadData:data MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +51,14 @@
     self.navigationItem.titleView = titleLabel;
 }
 
-
+-(void)initMain{
+    _webView = [[UIWebView alloc]init];
+    self.webView.scalesPageToFit = YES;
+    [self.view addSubview:_webView];
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
 
 #pragma mark - Actions
 -(void)shareButtonClicked:(UIButton *)sender{
