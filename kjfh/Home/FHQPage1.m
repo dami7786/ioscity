@@ -10,7 +10,7 @@
 
 @interface FHQPage1 ()
 @property (nonatomic,strong) UIImageView *imageView;
-
+ 
 @end
 
 @implementation FHQPage1
