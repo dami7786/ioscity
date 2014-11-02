@@ -1,35 +1,30 @@
 //
-//  TouZiZhiNanCell.m
+//  TouZiZhiNanSectionView.m
 //  kjfh
 //
-//  Created by ZhangAimin on 14/10/7.
+//  Created by ZhangAimin on 14/10/25.
 //  Copyright (c) 2014年 自由开发者. All rights reserved.
 //
 
-#import "TouZiZhiNanCell.h"
+#import "TouZiZhiNanDecorationView.h"
 
-@interface TouZiZhiNanCell ()
-
+@interface TouZiZhiNanDecorationView ()
 @property (nonatomic,strong) UIImageView *imageView;
-
 @end
 
-@implementation TouZiZhiNanCell
 
+@implementation TouZiZhiNanDecorationView
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         _imageView = [[UIImageView alloc]init];
         
-        [self.contentView addSubview:_imageView];
+        [self addSubview:_imageView];
+        self.imageView.image = [UIImage imageNamed:@"shujia"];
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView);
+            make.edges.equalTo(self);
         }];
     }
     return self;
-}
--(void)setImageName:(NSString *)imageName{
-    _imageName = imageName;
-    _imageView.image = [UIImage imageNamed:_imageName];
 }
 
 @end

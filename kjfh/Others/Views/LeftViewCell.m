@@ -35,11 +35,8 @@ const NSInteger KSpace8 = 8;
         _holderView = [[UIImageView alloc]init];
 //        self.holderView.image = [UIImage imageNamed:@"set_cell_bg_single"];
         self.holderView.layer.borderWidth = 0.5;
-        self.holderView.layer.borderColor = UIColorFromRGB(0xc6c6c6).CGColor;
+        self.holderView.layer.borderColor = UIColorFromRGB(0xC6C6C6).CGColor;
         self.holderView.backgroundColor = [UIColor whiteColor];
-        self.holderView.layer.shadowRadius = 3;
-        self.holderView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-        self.holderView.layer.shadowOpacity = 2;
         [self.contentView addSubview:self.holderView];
         
         //自动布局

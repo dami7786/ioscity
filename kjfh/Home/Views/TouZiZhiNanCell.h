@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TouZiZhiNanCell : UICollectionViewCell
-
+@property (nonatomic,strong) NSString *imageName;
 @end

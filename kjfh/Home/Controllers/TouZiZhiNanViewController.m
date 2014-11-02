@@ -7,14 +7,16 @@
 //
 
 #import "TouZiZhiNanViewController.h"
-#import "TouZiZhiNanLayout.h"
 #import "TouZiZhiNanCell.h"
-
+#import "TouZiZhiNanSectionView.h"
+#import "TouZiZhiNanDecorationView.h"
+#import "MZBookShelfCollectionViewLayout.h"
 static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 
-@interface TouZiZhiNanViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface TouZiZhiNanViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
+@property (nonatomic,strong) NSArray *dataSource;
 
 @end
 
@@ -47,13 +49,19 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
     self.navigationItem.titleView = titleLabel;
 }
 -(void)initMain{
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    MZBookshelfCollectionViewLayout *flowLayout = [[MZBookshelfCollectionViewLayout alloc]init];
+    [flowLayout registerClass:[TouZiZhiNanDecorationView class] forDecorationViewOfKind:MZBookshelfCollectionViewLayoutDecorationViewKind];
+    flowLayout.itemSize = CGSizeMake(98, 127);
+    flowLayout.minimumLineSpacing = 40;
+    flowLayout.minimumInteritemSpacing = 5;
+    flowLayout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 40);
     
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.collectionView.backgroundColor = UIColorFromRGB(0xF2F1ED);
+    self.collectionView.backgroundColor = [UIColor whiteColor];//UIColorFromRGB(0xF2F1ED);
     [self.collectionView registerClass:[TouZiZhiNanCell class] forCellWithReuseIdentifier:kTouZiZhiNanCellIdentifier];
+    [self.collectionView registerClass:[TouZiZhiNanSectionView class]  forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TouZiZhiNanSectionView"];
     [self.view addSubview:_collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -76,22 +84,61 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 
 #pragma mark - UICollectionViewDataSource,UICollectionViewDelegate
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 3;
-}
-
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 3;
+    return self.dataSource.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     TouZiZhiNanCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kTouZiZhiNanCellIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    cell.imageName = self.dataSource[indexPath.row];
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [[UIViewController alloc]init];
+    viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    [self presentViewController:viewController animated:YES completion:^{
+        
+    }];
+//    [self.navigationController pushViewController:viewController animated:YES];
     
+    
+}
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(0, 5,0, 5);
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(MZBookshelfCollectionViewLayout *)collectionViewLayout referenceSizeForDecorationViewForRow:(NSInteger)row inSection:(NSInteger)section{
+    
+    return CGSizeMake(collectionViewLayout.collectionViewContentSize.width, 60);
+}
+
+- (UIOffset)collectionView:(UICollectionView *)collectionView layout:(MZBookshelfCollectionViewLayout *)collectionViewLayout decorationViewAdjustmentForRow:(NSInteger)row inSection:(NSInteger)section{
+
+    return UIOffsetMake(0, -15);
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(SCREEN_WIDTH, 40);
+}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    TouZiZhiNanSectionView *sectionView =     [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"TouZiZhiNanSectionView" forIndexPath:indexPath];
+    return sectionView;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(98, 127);
+}
+
+#pragma mark - Images
+
+-(NSArray *)dataSource{
+    if (_dataSource == nil) {
+        _dataSource = @[@"fm_fuhuaqichengce",@"fm_jinrongfuwu",@"fm_ruyuanliucheng",@"fm_zhengfuzijishenqing",@"fm_hangyefazhandongtai"];
+    }
+    return _dataSource;
 }
 
 @end

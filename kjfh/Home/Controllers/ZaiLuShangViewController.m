@@ -19,11 +19,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self initNavBar];
     [self initMain];
-    NSString *readmePath = [[NSBundle mainBundle] pathForResource:@"README.html" ofType:nil];
+    NSString *readmePath = [[NSBundle mainBundle] pathForResource:@"xiegeini.html" ofType:nil];
     NSString *html = [NSString stringWithContentsOfFile:readmePath encoding:NSUTF8StringEncoding error:NULL];
     NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
-
-    [self.webView loadData:data MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:nil];
+    NSString *htmlString =  [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    [self.webView loadHTMLString:htmlString baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,7 +69,7 @@
                                      shareImage:[UIImage imageNamed:@"icon.png"]
                                 shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQzone,UMShareToQQ,UMShareToRenren,UMShareToDouban,UMShareToEmail,UMShareToSms,nil]
                                        delegate:nil];
-
+    
 }
 
 
