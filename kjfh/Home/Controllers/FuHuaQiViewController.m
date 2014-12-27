@@ -107,7 +107,7 @@
     [page5 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
         make.left.equalTo(page4.right);
-        make.width.equalTo(SCREEN_WIDTH);
+        make.width.equalTo(@(SCREEN_WIDTH));
         make.height.equalTo(contentView.height);
     }];
     UIView *sizingView = UIView.new;

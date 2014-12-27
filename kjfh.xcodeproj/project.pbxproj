@@ -115,6 +115,7 @@
 		3766537019BF38D60038419C /* FavrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3766536F19BF38D60038419C /* FavrateViewController.m */; };
 		3766537319BF38E50038419C /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3766537219BF38E50038419C /* SetViewController.m */; };
 		3766537619BF38FC0038419C /* TuijianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3766537519BF38FC0038419C /* TuijianViewController.m */; };
+		376F0C5C1A4E4E6C00AAD9C0 /* ZhengCeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F0C5B1A4E4E6C00AAD9C0 /* ZhengCeViewController.m */; };
 		37D1C3081A05BB7F00219D5E /* ZJYQPage1.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D1C3071A05BB7F00219D5E /* ZJYQPage1.m */; };
 		37D1C30B1A05BF8A00219D5E /* ZJYQPage2.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D1C30A1A05BF8A00219D5E /* ZJYQPage2.m */; };
 		37F5901F19FB7D3A006D7AC8 /* TouZiZhiNanDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5901E19FB7D3A006D7AC8 /* TouZiZhiNanDecorationView.m */; };
@@ -211,8 +212,8 @@
 		370591D519E2422C0043FC1B /* ZouJinYuanQuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZouJinYuanQuViewController.m; sourceTree = "<group>"; };
 		370591D719E2423B0043FC1B /* XinWenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XinWenViewController.h; sourceTree = "<group>"; };
 		370591D819E2423B0043FC1B /* XinWenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XinWenViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
-		370591DA19E242480043FC1B /* TouZiZhiNanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouZiZhiNanViewController.h; sourceTree = "<group>"; };
-		370591DB19E242480043FC1B /* TouZiZhiNanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouZiZhiNanViewController.m; sourceTree = "<group>"; };
+		370591DA19E242480043FC1B /* TouZiZhiNanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouZiZhiNanViewController.h; path = Controllers/TouZiZhiNanViewController.h; sourceTree = "<group>"; };
+		370591DB19E242480043FC1B /* TouZiZhiNanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouZiZhiNanViewController.m; path = Controllers/TouZiZhiNanViewController.m; sourceTree = "<group>"; };
 		370591DD19E242510043FC1B /* FuHuaQiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuHuaQiViewController.h; sourceTree = "<group>"; };
 		370591DE19E242510043FC1B /* FuHuaQiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuHuaQiViewController.m; sourceTree = "<group>"; };
 		370591E019E2425D0043FC1B /* ZhongDianQiYeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhongDianQiYeViewController.h; sourceTree = "<group>"; };
@@ -354,6 +355,8 @@
 		3766537219BF38E50038419C /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
 		3766537419BF38FC0038419C /* TuijianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuijianViewController.h; sourceTree = "<group>"; };
 		3766537519BF38FC0038419C /* TuijianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuijianViewController.m; sourceTree = "<group>"; };
+		376F0C5A1A4E4E6C00AAD9C0 /* ZhengCeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhengCeViewController.h; sourceTree = "<group>"; };
+		376F0C5B1A4E4E6C00AAD9C0 /* ZhengCeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhengCeViewController.m; sourceTree = "<group>"; };
 		37D1C3061A05BB7F00219D5E /* ZJYQPage1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJYQPage1.h; sourceTree = "<group>"; };
 		37D1C3071A05BB7F00219D5E /* ZJYQPage1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJYQPage1.m; sourceTree = "<group>"; };
 		37D1C3091A05BF8A00219D5E /* ZJYQPage2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJYQPage2.h; sourceTree = "<group>"; };
@@ -872,6 +875,7 @@
 		376652E819BF22490038419C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				376F0C591A4E4DFB00AAD9C0 /* TouZiZhiNan */,
 				371358341A05D9C900A4C33A /* FuHuaQi */,
 				37D1C3051A05BB6100219D5E /* ZouJinYuanQu */,
 				376652E919BF22490038419C /* Controllers */,
@@ -891,8 +895,6 @@
 				370591D519E2422C0043FC1B /* ZouJinYuanQuViewController.m */,
 				370591D719E2423B0043FC1B /* XinWenViewController.h */,
 				370591D819E2423B0043FC1B /* XinWenViewController.m */,
-				370591DA19E242480043FC1B /* TouZiZhiNanViewController.h */,
-				370591DB19E242480043FC1B /* TouZiZhiNanViewController.m */,
 				370591DD19E242510043FC1B /* FuHuaQiViewController.h */,
 				370591DE19E242510043FC1B /* FuHuaQiViewController.m */,
 				370591E019E2425D0043FC1B /* ZhongDianQiYeViewController.h */,
@@ -1027,6 +1029,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		376F0C591A4E4DFB00AAD9C0 /* TouZiZhiNan */ = {
+			isa = PBXGroup;
+			children = (
+				370591DA19E242480043FC1B /* TouZiZhiNanViewController.h */,
+				370591DB19E242480043FC1B /* TouZiZhiNanViewController.m */,
+				376F0C5A1A4E4E6C00AAD9C0 /* ZhengCeViewController.h */,
+				376F0C5B1A4E4E6C00AAD9C0 /* ZhengCeViewController.m */,
+			);
+			name = TouZiZhiNan;
+			sourceTree = "<group>";
+		};
 		37D1C3051A05BB6100219D5E /* ZouJinYuanQu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,6 +1105,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "自由开发者";
 				TargetAttributes = {
+					3701B41719BF1D97004F1955 = {
+						DevelopmentTeam = J978FNF7HM;
+					};
 					3701B43819BF1D97004F1955 = {
 						TestTargetID = 3701B41719BF1D97004F1955;
 					};
@@ -1179,6 +1195,7 @@
 				3713583D1A05D9F200A4C33A /* FHQPage3.m in Sources */,
 				3709896319E394C300CFFB9C /* UIImage+GIF.m in Sources */,
 				3709896119E394C300CFFB9C /* SDWebImagePrefetcher.m in Sources */,
+				376F0C5C1A4E4E6C00AAD9C0 /* ZhengCeViewController.m in Sources */,
 				370591D619E2422C0043FC1B /* ZouJinYuanQuViewController.m in Sources */,
 				3713582D1A05CCF500A4C33A /* ZJYQPage3.m in Sources */,
 				3709896F19E39F8600CFFB9C /* MBProgressHUD.m in Sources */,
@@ -1352,7 +1369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hua Jiang (CAY8AAZZXB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/kjfh/ThirdPart/UMSocial/UMSocial_Extra/Renren",
@@ -1391,7 +1408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hua Jiang (CAY8AAZZXB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/kjfh/ThirdPart/UMSocial/UMSocial_Extra/Renren",

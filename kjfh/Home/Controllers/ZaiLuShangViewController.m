@@ -49,6 +49,8 @@
     titleLabel.backgroundColor = [UIColor clearColor];
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;
+    self.navigationController.navigationBar.tintColor =UIColorFromRGB(0xAB94C2);
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
 }
 
 -(void)initMain{
@@ -76,4 +78,9 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 }
+-(void)dealloc{
+    _webView.delegate = nil;
+    _webView.scrollView.delegate = nil;
+}
+
 @end

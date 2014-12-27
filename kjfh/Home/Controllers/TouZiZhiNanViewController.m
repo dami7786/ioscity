@@ -96,12 +96,12 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController *viewController = [[UIViewController alloc]init];
-    viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//    viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     viewController.view.backgroundColor = [UIColor whiteColor];
-    [self presentViewController:viewController animated:YES completion:^{
-        
-    }];
-//    [self.navigationController pushViewController:viewController animated:YES];
+//    [self presentViewController:viewController animated:YES completion:^{
+//        
+//    }];
+    [self.navigationController pushViewController:viewController animated:YES];
     
     
 }

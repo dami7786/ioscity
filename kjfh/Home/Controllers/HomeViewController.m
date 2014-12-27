@@ -16,7 +16,7 @@
 #import "FuHuaQiViewController.h"
 #import "ZhongDianQiYeViewController.h"
 #import "TouZiZhiNanViewController.h"
-@interface HomeViewController ()
+@interface HomeViewController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -71,7 +71,7 @@
     [self.view addSubview:button1];
     
     UIImageView *button1_imageView = [[UIImageView alloc]init];
-    button1_imageView.image = [UIImage imageNamed:@"home_btn_1.jpg"];
+    button1_imageView.image = [UIImage imageNamed:@"toyou.jpg"];
     [button1 addSubview:button1_imageView];
     [button1_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(button1);
@@ -86,7 +86,7 @@
     [self.view addSubview:button2];
     
     UIImageView *button2_imageView = [[UIImageView alloc]init];
-    button2_imageView.image = [UIImage imageNamed:@"home_btn_2.png"];
+    button2_imageView.image = [UIImage imageNamed:@"image"];
     [button2 addSubview:button2_imageView];
     [button2_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button2.centerX);
@@ -111,7 +111,7 @@
     [self.view addSubview:button3];
     
     UIImageView *button3_imageView = [[UIImageView alloc]init];
-    button3_imageView.image = [UIImage imageNamed:@"home_btn_3.png"];
+    button3_imageView.image = [UIImage imageNamed:@"news"];
     [button3 addSubview:button3_imageView];
     [button3_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button3.centerX);
@@ -137,7 +137,7 @@
     [self.view addSubview:button4];
     
     UIImageView *button4_imageView = [[UIImageView alloc]init];
-    button4_imageView.image = [UIImage imageNamed:@"home_btn_4.png"];
+    button4_imageView.image = [UIImage imageNamed:@"zhinan"];
     [button4 addSubview:button4_imageView];
     [button4_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button4.centerX);
@@ -285,9 +285,16 @@
             controller = [[ZhongDianQiYeViewController alloc]init];
             break;
     }
-
-    [self.navigationController pushViewController:controller animated:YES];
     
+    [self.navigationController pushViewController:controller animated:YES];
+    self.navigationController.delegate = self;
+}
+
+-(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if (viewController == self) {
+        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 - (void)didReceiveMemoryWarning

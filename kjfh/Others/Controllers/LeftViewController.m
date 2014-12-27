@@ -143,9 +143,8 @@
 }
 
 -(NSArray *)images{
-    
     if (_images == nil) {
-        _images = @[@"home.png",@"fav.png",@"application.png",@"set.png",@"qiye.png"];
+        _images = @[@"home",@"fav_btn",@"tuijian",@"setting",@"qiye"];
     }
     return _images;
 }
