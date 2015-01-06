@@ -116,6 +116,14 @@
 		3766537319BF38E50038419C /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3766537219BF38E50038419C /* SetViewController.m */; };
 		3766537619BF38FC0038419C /* TuijianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3766537519BF38FC0038419C /* TuijianViewController.m */; };
 		376F0C5C1A4E4E6C00AAD9C0 /* ZhengCeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F0C5B1A4E4E6C00AAD9C0 /* ZhengCeViewController.m */; };
+		376F0C611A4E777C00AAD9C0 /* zhengce.json in Resources */ = {isa = PBXBuildFile; fileRef = 376F0C601A4E777C00AAD9C0 /* zhengce.json */; };
+		376F0C641A4E78DC00AAD9C0 /* TouXiZhiNanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F0C631A4E78DC00AAD9C0 /* TouXiZhiNanCell.m */; };
+		376F0C671A4E7A7B00AAD9C0 /* TouZiZhiNanSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F0C661A4E7A7B00AAD9C0 /* TouZiZhiNanSection.m */; };
+		376F0C6A1A4E86A800AAD9C0 /* UIColor+XCar6.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F0C691A4E86A800AAD9C0 /* UIColor+XCar6.m */; };
+		376F0C6D1A4E8B3700AAD9C0 /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F0C6C1A4E8B3700AAD9C0 /* CommonWebViewController.m */; };
+		376F0C701A4FDDB800AAD9C0 /* ZhongDianQiYeDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F0C6F1A4FDDB800AAD9C0 /* ZhongDianQiYeDetail.m */; };
+		376F0C721A4FE78E00AAD9C0 /* zhongdianqiye.json in Resources */ = {isa = PBXBuildFile; fileRef = 376F0C711A4FE78E00AAD9C0 /* zhongdianqiye.json */; };
+		376F0C751A4FED1400AAD9C0 /* RuYuanZiXunController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F0C741A4FED1400AAD9C0 /* RuYuanZiXunController.m */; };
 		37D1C3081A05BB7F00219D5E /* ZJYQPage1.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D1C3071A05BB7F00219D5E /* ZJYQPage1.m */; };
 		37D1C30B1A05BF8A00219D5E /* ZJYQPage2.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D1C30A1A05BF8A00219D5E /* ZJYQPage2.m */; };
 		37F5901F19FB7D3A006D7AC8 /* TouZiZhiNanDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5901E19FB7D3A006D7AC8 /* TouZiZhiNanDecorationView.m */; };
@@ -357,6 +365,20 @@
 		3766537519BF38FC0038419C /* TuijianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuijianViewController.m; sourceTree = "<group>"; };
 		376F0C5A1A4E4E6C00AAD9C0 /* ZhengCeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhengCeViewController.h; sourceTree = "<group>"; };
 		376F0C5B1A4E4E6C00AAD9C0 /* ZhengCeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhengCeViewController.m; sourceTree = "<group>"; };
+		376F0C601A4E777C00AAD9C0 /* zhengce.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zhengce.json; sourceTree = "<group>"; };
+		376F0C621A4E78DC00AAD9C0 /* TouXiZhiNanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouXiZhiNanCell.h; sourceTree = "<group>"; };
+		376F0C631A4E78DC00AAD9C0 /* TouXiZhiNanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouXiZhiNanCell.m; sourceTree = "<group>"; };
+		376F0C651A4E7A7B00AAD9C0 /* TouZiZhiNanSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouZiZhiNanSection.h; sourceTree = "<group>"; };
+		376F0C661A4E7A7B00AAD9C0 /* TouZiZhiNanSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouZiZhiNanSection.m; sourceTree = "<group>"; };
+		376F0C681A4E86A800AAD9C0 /* UIColor+XCar6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+XCar6.h"; sourceTree = "<group>"; };
+		376F0C691A4E86A800AAD9C0 /* UIColor+XCar6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+XCar6.m"; sourceTree = "<group>"; };
+		376F0C6B1A4E8B3700AAD9C0 /* CommonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonWebViewController.h; sourceTree = "<group>"; };
+		376F0C6C1A4E8B3700AAD9C0 /* CommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonWebViewController.m; sourceTree = "<group>"; };
+		376F0C6E1A4FDDB800AAD9C0 /* ZhongDianQiYeDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhongDianQiYeDetail.h; sourceTree = "<group>"; };
+		376F0C6F1A4FDDB800AAD9C0 /* ZhongDianQiYeDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhongDianQiYeDetail.m; sourceTree = "<group>"; };
+		376F0C711A4FE78E00AAD9C0 /* zhongdianqiye.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zhongdianqiye.json; sourceTree = "<group>"; };
+		376F0C731A4FED1400AAD9C0 /* RuYuanZiXunController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuYuanZiXunController.h; sourceTree = "<group>"; };
+		376F0C741A4FED1400AAD9C0 /* RuYuanZiXunController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuYuanZiXunController.m; sourceTree = "<group>"; };
 		37D1C3061A05BB7F00219D5E /* ZJYQPage1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJYQPage1.h; sourceTree = "<group>"; };
 		37D1C3071A05BB7F00219D5E /* ZJYQPage1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJYQPage1.m; sourceTree = "<group>"; };
 		37D1C3091A05BF8A00219D5E /* ZJYQPage2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJYQPage2.h; sourceTree = "<group>"; };
@@ -752,6 +774,8 @@
 		376652CD19BF217C0038419C /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				376F0C681A4E86A800AAD9C0 /* UIColor+XCar6.h */,
+				376F0C691A4E86A800AAD9C0 /* UIColor+XCar6.m */,
 				376652F519BF227F0038419C /* Controllers */,
 				376652F619BF227F0038419C /* Models */,
 				376652F719BF227F0038419C /* Other */,
@@ -899,12 +923,16 @@
 				370591DE19E242510043FC1B /* FuHuaQiViewController.m */,
 				370591E019E2425D0043FC1B /* ZhongDianQiYeViewController.h */,
 				370591E119E2425D0043FC1B /* ZhongDianQiYeViewController.m */,
+				376F0C6E1A4FDDB800AAD9C0 /* ZhongDianQiYeDetail.h */,
+				376F0C6F1A4FDDB800AAD9C0 /* ZhongDianQiYeDetail.m */,
 				370591E319E2426F0043FC1B /* ZaiLuShangViewController.h */,
 				370591E419E2426F0043FC1B /* ZaiLuShangViewController.m */,
 				370591E619E2472F0043FC1B /* BaseViewController.h */,
 				370591E719E2472F0043FC1B /* BaseViewController.m */,
 				3709896919E39CDC00CFFB9C /* NewsDetailViewController.h */,
 				3709896A19E39CDC00CFFB9C /* NewsDetailViewController.m */,
+				376F0C731A4FED1400AAD9C0 /* RuYuanZiXunController.h */,
+				376F0C741A4FED1400AAD9C0 /* RuYuanZiXunController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -927,6 +955,7 @@
 				37F5902119FBA381006D7AC8 /* MZBookShelfCollectionViewLayout.m */,
 				37F5902219FBA381006D7AC8 /* LXReorderableCollectionViewFlowLayout.h */,
 				37F5902319FBA381006D7AC8 /* LXReorderableCollectionViewFlowLayout.m */,
+				376F0C711A4FE78E00AAD9C0 /* zhongdianqiye.json */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1032,10 +1061,17 @@
 		376F0C591A4E4DFB00AAD9C0 /* TouZiZhiNan */ = {
 			isa = PBXGroup;
 			children = (
+				376F0C6B1A4E8B3700AAD9C0 /* CommonWebViewController.h */,
+				376F0C6C1A4E8B3700AAD9C0 /* CommonWebViewController.m */,
 				370591DA19E242480043FC1B /* TouZiZhiNanViewController.h */,
 				370591DB19E242480043FC1B /* TouZiZhiNanViewController.m */,
 				376F0C5A1A4E4E6C00AAD9C0 /* ZhengCeViewController.h */,
 				376F0C5B1A4E4E6C00AAD9C0 /* ZhengCeViewController.m */,
+				376F0C601A4E777C00AAD9C0 /* zhengce.json */,
+				376F0C621A4E78DC00AAD9C0 /* TouXiZhiNanCell.h */,
+				376F0C631A4E78DC00AAD9C0 /* TouXiZhiNanCell.m */,
+				376F0C651A4E7A7B00AAD9C0 /* TouZiZhiNanSection.h */,
+				376F0C661A4E7A7B00AAD9C0 /* TouZiZhiNanSection.m */,
 			);
 			name = TouZiZhiNan;
 			sourceTree = "<group>";
@@ -1138,12 +1174,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376F0C611A4E777C00AAD9C0 /* zhengce.json in Resources */,
 				3705917A19E22DE00043FC1B /* UMShareEditViewControlleriPad.xib in Resources */,
 				3705917C19E22DE00043FC1B /* UMSnsAccountViewController.xib in Resources */,
 				3705917719E22DE00043FC1B /* UMSCommentInputController.xib in Resources */,
 				3705917619E22DE00043FC1B /* UMSCommentDetailController.xib in Resources */,
 				3709893019E3838B00CFFB9C /* newsList.json in Resources */,
 				370591A519E231360043FC1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				376F0C721A4FE78E00AAD9C0 /* zhongdianqiye.json in Resources */,
 				375239B719F3B1680081A7A4 /* xiegeini.html in Resources */,
 				3701B43419BF1D97004F1955 /* Images.xcassets in Resources */,
 				3705917E19E22DE00043FC1B /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -1200,13 +1238,16 @@
 				3713582D1A05CCF500A4C33A /* ZJYQPage3.m in Sources */,
 				3709896F19E39F8600CFFB9C /* MBProgressHUD.m in Sources */,
 				371358331A05CD2400A4C33A /* ZJYQPage5.m in Sources */,
+				376F0C701A4FDDB800AAD9C0 /* ZhongDianQiYeDetail.m in Sources */,
 				376652DA19BF217C0038419C /* MMDrawerBarButtonItem.m in Sources */,
 				3706B4F219CE8501000647FA /* MASViewAttribute.m in Sources */,
 				371358371A05D9E000A4C33A /* FHQPage1.m in Sources */,
 				3709895C19E394C300CFFB9C /* SDWebImageCompat.m in Sources */,
 				3709895E19E394C300CFFB9C /* SDWebImageDownloader.m in Sources */,
+				376F0C671A4E7A7B00AAD9C0 /* TouZiZhiNanSection.m in Sources */,
 				3709895F19E394C300CFFB9C /* SDWebImageDownloaderOperation.m in Sources */,
 				3709895D19E394C300CFFB9C /* SDWebImageDecoder.m in Sources */,
+				376F0C6D1A4E8B3700AAD9C0 /* CommonWebViewController.m in Sources */,
 				3709896019E394C300CFFB9C /* SDWebImageManager.m in Sources */,
 				3709897819E3DAA600CFFB9C /* ZhongDianQiYeCell.m in Sources */,
 				3706B4F019CE8501000647FA /* MASConstraintMaker.m in Sources */,
@@ -1214,6 +1255,7 @@
 				3709893319E3860100CFFB9C /* NewsCell.m in Sources */,
 				376652DD19BF217C0038419C /* UIViewController+MMDrawerController.m in Sources */,
 				370591D919E2423B0043FC1B /* XinWenViewController.m in Sources */,
+				376F0C641A4E78DC00AAD9C0 /* TouXiZhiNanCell.m in Sources */,
 				3709896819E394C300CFFB9C /* UIView+WebCacheOperation.m in Sources */,
 				37D1C30B1A05BF8A00219D5E /* ZJYQPage2.m in Sources */,
 				3709898419E3E9A600CFFB9C /* TouZiZhiNanCell.m in Sources */,
@@ -1222,8 +1264,10 @@
 				3709893619E386BC00CFFB9C /* NewsModel.m in Sources */,
 				370591E519E2426F0043FC1B /* ZaiLuShangViewController.m in Sources */,
 				3706B4F419CE8501000647FA /* NSArray+MASAdditions.m in Sources */,
+				376F0C751A4FED1400AAD9C0 /* RuYuanZiXunController.m in Sources */,
 				3709895919E394C300CFFB9C /* MKAnnotationView+WebCache.m in Sources */,
 				37F5902419FBA381006D7AC8 /* MZBookShelfCollectionViewLayout.m in Sources */,
+				376F0C6A1A4E86A800AAD9C0 /* UIColor+XCar6.m in Sources */,
 				3709896419E394C300CFFB9C /* UIImage+MultiFormat.m in Sources */,
 				3766537319BF38E50038419C /* SetViewController.m in Sources */,
 				3706B4F119CE8501000647FA /* MASLayoutConstraint.m in Sources */,
@@ -1369,6 +1413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1385,6 +1430,7 @@
 				);
 				INFOPLIST_FILE = "kjfh/kjfh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/kjfh/ThirdPart/UMSocial/UMSocial_Extra/LaiWang",
@@ -1399,6 +1445,8 @@
 					"$(PROJECT_DIR)/kjfh/ThirdPart/UMAnalytics",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "kjfh/Home/kjfh-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1408,6 +1456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1424,6 +1473,7 @@
 				);
 				INFOPLIST_FILE = "kjfh/kjfh-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/kjfh/ThirdPart/UMSocial/UMSocial_Extra/LaiWang",
@@ -1438,6 +1488,7 @@
 					"$(PROJECT_DIR)/kjfh/ThirdPart/UMAnalytics",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "kjfh/Home/kjfh-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

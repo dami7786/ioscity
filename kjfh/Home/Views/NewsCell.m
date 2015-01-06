@@ -26,9 +26,6 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         _contentHolder = [[UIImageView alloc]init];
         self.contentHolder.backgroundColor = [UIColor whiteColor];
-        self.contentHolder.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-//        self.contentHolder.layer.shadowOffset = CGSizeMake(3, 3);
-        self.contentHolder.layer.shadowOpacity = 2;
         [self.contentView addSubview:_contentHolder];
         
         UIEdgeInsets inset = UIEdgeInsetsMake(2,7,2,7);
@@ -75,11 +72,11 @@
 }
 
 -(void)setModel:(NewsModel *)model{
- 
+    
     _model = model;
     
     self.titleLabel.text = model.title;
-
+    
     self.hotFlag.hidden = !model.hot;
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
@@ -88,7 +85,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

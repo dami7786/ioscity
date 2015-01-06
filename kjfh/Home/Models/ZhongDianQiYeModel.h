@@ -12,4 +12,5 @@
 @property (nonatomic,strong) UIColor *flagColor;
 @property (nonatomic,strong) NSString *img;
 @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *contentStr;
 @end

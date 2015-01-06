@@ -21,18 +21,20 @@
 
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.contentView.backgroundColor= [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
         _holderView = [[UIView alloc]init];
-        self.holderView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-        self.holderView.layer.shadowOpacity = 3;
-        self.holderView.layer.shadowOffset = CGSizeMake(3, 3);
-        self.holderView.layer.shadowRadius = 2;
+//        self.holderView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+//        self.holderView.layer.shadowOpacity = 3;
+//        self.holderView.layer.shadowOffset = CGSizeMake(3, 3);
+//        self.holderView.layer.shadowRadius = 2;
         self.holderView.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:_holderView];
         [self.holderView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(5);
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
-            make.left.equalTo(self.contentView.mas_left).offset(4);
-            make.right.equalTo(self.contentView.mas_right).offset(-4);
+            make.bottom.equalTo(self.contentView.mas_bottom);//.offset(-5);
+            make.left.equalTo(self.contentView.mas_left).offset(8);
+            make.right.equalTo(self.contentView.mas_right).offset(-8);
         }];
         
         _flagView = [[UIImageView alloc]init];
@@ -74,9 +76,9 @@
 
 -(void)setModel:(ZhongDianQiYeModel *)model{
     _model = model;
-    self.flagView.image = [UIImage imageWithColor:[UIColor orangeColor]];
+    self.flagView.image = [UIImage imageWithColor:model.flagColor];
     self.headImage.image = [UIImage imageNamed:@"mail"];
-    self.titleLabel.text = @"西安优势铁路新技术有限责任公司";
+    self.titleLabel.text = model.title;
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

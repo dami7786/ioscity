@@ -21,7 +21,7 @@
 
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xF2F1ED);
-    [self initNav];
+//    [self initNav];
     [self initMain];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:self.newsUrl] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30];
     [self.webView loadRequest:request];

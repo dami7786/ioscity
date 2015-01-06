@@ -45,13 +45,13 @@
 //设置导航栏
 - (void)initNavBar {
     
-    //左侧按钮
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
-    [btn addTarget:self  action:@selector(leftDrawerButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-    [btn setImage:[UIImage imageNamed:@"set_btn"] forState:UIControlStateNormal];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    [self.navigationItem setLeftBarButtonItem:leftButton animated:YES];
+//    //左侧按钮
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
+//    [btn addTarget:self  action:@selector(leftDrawerButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+//    [btn setImage:[UIImage imageNamed:@"set_btn"] forState:UIControlStateNormal];
+//    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//    [self.navigationItem setLeftBarButtonItem:leftButton animated:YES];
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"西户科创园";
@@ -163,7 +163,7 @@
     [self.view addSubview:button5];
     
     UIImageView *button5_imageView = [[UIImageView alloc]init];
-    button5_imageView.image = [UIImage imageNamed:@"home_btn_5.png"];
+    button5_imageView.image = [UIImage imageNamed:@"fuhuaqi"];
     [button5 addSubview:button5_imageView];
     [button5_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(button5.left).offset(8);
@@ -289,13 +289,13 @@
     [self.navigationController pushViewController:controller animated:YES];
     self.navigationController.delegate = self;
 }
-
--(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if (viewController == self) {
-        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
-    }
-}
+//
+//-(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+//    if (viewController == self) {
+//        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+//    }
+//}
 
 - (void)didReceiveMemoryWarning
 {

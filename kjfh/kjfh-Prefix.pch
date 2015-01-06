@@ -16,7 +16,7 @@
     #import "Comment.h"
     #import "UIImage+XCarExtend.h"
     #import <QuartzCore/QuartzCore.h>
-
+    #import "UIColor+XCar6.h"
     //define this constant if you want to use Masonry without the 'mas_' prefix
     #define MAS_SHORTHAND
 

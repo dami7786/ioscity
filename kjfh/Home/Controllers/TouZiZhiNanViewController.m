@@ -11,6 +11,8 @@
 #import "TouZiZhiNanSectionView.h"
 #import "TouZiZhiNanDecorationView.h"
 #import "MZBookShelfCollectionViewLayout.h"
+#import "ZhengCeViewController.h"
+#import "CommonWebViewController.h"
 static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 
 @interface TouZiZhiNanViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
@@ -32,13 +34,13 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 //设置导航栏
 - (void)initNavBar {
     
-    //左侧按钮
-    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [addButton setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
-    [addButton addTarget:self  action:@selector(addButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [addButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:addButton];
-    [self.navigationItem setRightBarButtonItem:leftButton animated:NO];
+//    //左侧按钮
+//    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [addButton setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
+//    [addButton addTarget:self  action:@selector(addButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    [addButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+//    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:addButton];
+//    [self.navigationItem setRightBarButtonItem:leftButton animated:NO];
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"投资指南";
@@ -58,6 +60,7 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
     
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     self.collectionView.delegate = self;
+    self.collectionView.alwaysBounceVertical = YES;
     self.collectionView.dataSource = self;
     self.collectionView.backgroundColor = [UIColor whiteColor];//UIColorFromRGB(0xF2F1ED);
     [self.collectionView registerClass:[TouZiZhiNanCell class] forCellWithReuseIdentifier:kTouZiZhiNanCellIdentifier];
@@ -95,7 +98,7 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *viewController = [[UIViewController alloc]init];
+    ZhengCeViewController *viewController = [[ZhengCeViewController alloc]init];
 //    viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     viewController.view.backgroundColor = [UIColor whiteColor];
 //    [self presentViewController:viewController animated:YES completion:^{
@@ -103,6 +106,11 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 //    }];
     [self.navigationController pushViewController:viewController animated:YES];
     
+    
+    
+//    CommonWebViewController *webViewController = [[CommonWebViewController alloc]init];
+//    webViewController.documentName = @"132.doc";
+//    [self.navigationController pushViewController:webViewController animated:YES];
     
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -124,7 +132,7 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
-    TouZiZhiNanSectionView *sectionView =     [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"TouZiZhiNanSectionView" forIndexPath:indexPath];
+    TouZiZhiNanSectionView *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"TouZiZhiNanSectionView" forIndexPath:indexPath];
     return sectionView;
 }
 

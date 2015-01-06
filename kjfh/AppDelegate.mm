@@ -31,20 +31,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [self startMotiontor];
+//    [self startMotiontor];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    LeftViewController *leftViewController = [[LeftViewController alloc]init];
+//    LeftViewController *leftViewController = [[LeftViewController alloc]init];
     HomeViewController *homeViewController = [[HomeViewController alloc]init];
     UINavigationController *homeNavController = [[UINavigationController alloc]initWithRootViewController:homeViewController];
-    self.drawerController = [[MMDrawerController alloc]initWithCenterViewController:homeNavController leftDrawerViewController:leftViewController];
+//    self.drawerController = [[MMDrawerController alloc]initWithCenterViewController:homeNavController leftDrawerViewController:leftViewController];
     
-    [self.drawerController setMaximumRightDrawerWidth:200.0];
-    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
-    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    [self.drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController,MMDrawerSide drawerSide, CGFloat percentVisible) {
-     }];
-    self.window.rootViewController = self.drawerController;
+//    [self.drawerController setMaximumRightDrawerWidth:200.0];
+//    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+//    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+//    [self.drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController,MMDrawerSide drawerSide, CGFloat percentVisible) {
+//     }];
+//    self.window.rootViewController = self.drawerController;
+    self.window.rootViewController = homeNavController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [self customAppearance];
@@ -77,6 +78,8 @@
 //        [[UINavigationBar appearance] setTintColor:[UIColor c_darkTextColor]];
         [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back_btn.png"]];
         [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back_btn.png"]];
+
+        
     }else{
 //        [[UINavigationBar appearance] setTintColor:[UIColor c_darkTextColor]];
     }

@@ -34,13 +34,13 @@
 //设置导航栏
 - (void)initNavBar {
     
-    //左侧按钮
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
-    [btn addTarget:self  action:@selector(shareButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [btn setImage:[UIImage imageNamed:@"share_2"] forState:UIControlStateNormal];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    [self.navigationItem setRightBarButtonItem:leftButton animated:NO];
+//    //左侧按钮
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
+//    [btn addTarget:self  action:@selector(shareButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    [btn setImage:[UIImage imageNamed:@"share_2"] forState:UIControlStateNormal];
+//    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//    [self.navigationItem setRightBarButtonItem:leftButton animated:NO];
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"写给创业路上的你";
@@ -75,9 +75,9 @@
 }
 
 
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-}
+//-(void)viewDidDisappear:(BOOL)animated{
+//    [super viewDidDisappear:animated];
+//}
 -(void)dealloc{
     _webView.delegate = nil;
     _webView.scrollView.delegate = nil;

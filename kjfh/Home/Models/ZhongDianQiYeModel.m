@@ -9,5 +9,7 @@
 #import "ZhongDianQiYeModel.h"
 
 @implementation ZhongDianQiYeModel
-
+-(void)setContentStr:(NSString *)contentStr{
+    _contentStr = contentStr;
+}
 @end

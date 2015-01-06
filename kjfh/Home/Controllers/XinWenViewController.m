@@ -9,6 +9,9 @@
 #import "XinWenViewController.h"
 #import "NewsCell.h"
 #import "NewsDetailViewController.h"
+
+static NSString *NewsCellIdentifier = @"NewsCellIdentifier";
+
 @interface XinWenViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong) UITableView *tableView;
@@ -32,13 +35,13 @@
 //设置导航栏
 - (void)initNavBar {
     
-    //左侧按钮
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
-    [btn addTarget:self  action:@selector(favButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [btn setImage:[UIImage imageNamed:@"fav_article"] forState:UIControlStateNormal];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    [self.navigationItem setRightBarButtonItem:leftButton animated:NO];
+//    //左侧按钮
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
+//    [btn addTarget:self  action:@selector(favButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    [btn setImage:[UIImage imageNamed:@"fav_article"] forState:UIControlStateNormal];
+//    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//    [self.navigationItem setRightBarButtonItem:leftButton animated:NO];
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"新闻";
@@ -52,6 +55,8 @@
     _tableView = [[UITableView alloc]initWithFrame:self.navigationController.view.bounds style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.rowHeight = NewsCellDefualtHeight;
+    [self.tableView registerClass:[NewsCell class] forCellReuseIdentifier:NewsCellIdentifier];
      self.tableView.backgroundColor = UIColorFromRGB(0xF2F1ED);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
@@ -83,7 +88,9 @@
 }
 
 #pragma mark - UITableViewDelegate  UITableViewDataSourece
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -93,18 +100,10 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellIdentifier = @"CellIdentifier";
-    NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[NewsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+    NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NewsCellIdentifier forIndexPath:indexPath];
     cell.model = self.dataSource[indexPath.row];
     return cell;
     
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    return NewsCellDefualtHeight;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
