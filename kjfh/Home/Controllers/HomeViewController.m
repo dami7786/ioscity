@@ -35,7 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.tintColor =UIColorFromRGB(0xAB94C2);
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self initNavBar];
@@ -55,7 +57,7 @@
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"西户科创园";
-    titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.font = [UIFont systemFontOfSize:16];
     titleLabel.textColor = RGB(66, 66, 66);
     titleLabel.backgroundColor = [UIColor clearColor];
     [titleLabel sizeToFit];

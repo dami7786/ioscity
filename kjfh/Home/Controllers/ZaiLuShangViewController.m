@@ -44,13 +44,11 @@
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"写给创业路上的你";
-    titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.font = [UIFont systemFontOfSize:16];
     titleLabel.textColor = RGB(66, 66, 66);
     titleLabel.backgroundColor = [UIColor clearColor];
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;
-    self.navigationController.navigationBar.tintColor =UIColorFromRGB(0xAB94C2);
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
 }
 
 -(void)initMain{

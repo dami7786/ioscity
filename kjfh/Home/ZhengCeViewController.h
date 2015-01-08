@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZhengCeViewController : UIViewController
-
+@interface ZhengCeViewController : UIViewController{
+    NSString *_navTitle;
+}
+@property (nonatomic,strong) NSString *navTitle;
+@property (nonatomic,strong) NSString *file;
+@property (nonatomic,assign) BOOL showSection;
 @end

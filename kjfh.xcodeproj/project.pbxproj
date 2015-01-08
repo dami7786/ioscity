@@ -105,6 +105,10 @@
 		37523B7B19F3B42E0081A7A4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7A19F3B42E0081A7A4 /* ImageIO.framework */; };
 		37523B7D19F3B52D0081A7A4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7C19F3B52D0081A7A4 /* MobileCoreServices.framework */; };
 		37523B7F19F3B5410081A7A4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37523B7E19F3B5410081A7A4 /* MediaPlayer.framework */; };
+		37615D2B1A5D75A500D32C97 /* JinRongFuWuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37615D2A1A5D75A500D32C97 /* JinRongFuWuViewController.m */; };
+		37615D2D1A5D778100D32C97 /* jinronfuwu.json in Resources */ = {isa = PBXBuildFile; fileRef = 37615D2C1A5D778100D32C97 /* jinronfuwu.json */; };
+		37615D2F1A5D7C4400D32C97 /* zhengfuzijin.json in Resources */ = {isa = PBXBuildFile; fileRef = 37615D2E1A5D7C4400D32C97 /* zhengfuzijin.json */; };
+		37615D311A5D7E8400D32C97 /* hangyedongtai.json in Resources */ = {isa = PBXBuildFile; fileRef = 37615D301A5D7E8400D32C97 /* hangyedongtai.json */; };
 		376652DA19BF217C0038419C /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 376652D219BF217C0038419C /* MMDrawerBarButtonItem.m */; };
 		376652DB19BF217C0038419C /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376652D519BF217C0038419C /* MMDrawerController.m */; };
 		376652DC19BF217C0038419C /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 376652D719BF217C0038419C /* MMDrawerVisualState.m */; };
@@ -341,6 +345,11 @@
 		37523B7A19F3B42E0081A7A4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		37523B7C19F3B52D0081A7A4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		37523B7E19F3B5410081A7A4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		37615D291A5D75A500D32C97 /* JinRongFuWuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinRongFuWuViewController.h; sourceTree = "<group>"; };
+		37615D2A1A5D75A500D32C97 /* JinRongFuWuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinRongFuWuViewController.m; sourceTree = "<group>"; };
+		37615D2C1A5D778100D32C97 /* jinronfuwu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jinronfuwu.json; sourceTree = "<group>"; };
+		37615D2E1A5D7C4400D32C97 /* zhengfuzijin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zhengfuzijin.json; sourceTree = "<group>"; };
+		37615D301A5D7E8400D32C97 /* hangyedongtai.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hangyedongtai.json; sourceTree = "<group>"; };
 		376652D119BF217C0038419C /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
 		376652D219BF217C0038419C /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
 		376652D319BF217C0038419C /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
@@ -1061,12 +1070,17 @@
 		376F0C591A4E4DFB00AAD9C0 /* TouZiZhiNan */ = {
 			isa = PBXGroup;
 			children = (
+				37615D301A5D7E8400D32C97 /* hangyedongtai.json */,
+				37615D2E1A5D7C4400D32C97 /* zhengfuzijin.json */,
+				37615D2C1A5D778100D32C97 /* jinronfuwu.json */,
 				376F0C6B1A4E8B3700AAD9C0 /* CommonWebViewController.h */,
 				376F0C6C1A4E8B3700AAD9C0 /* CommonWebViewController.m */,
 				370591DA19E242480043FC1B /* TouZiZhiNanViewController.h */,
 				370591DB19E242480043FC1B /* TouZiZhiNanViewController.m */,
 				376F0C5A1A4E4E6C00AAD9C0 /* ZhengCeViewController.h */,
 				376F0C5B1A4E4E6C00AAD9C0 /* ZhengCeViewController.m */,
+				37615D291A5D75A500D32C97 /* JinRongFuWuViewController.h */,
+				37615D2A1A5D75A500D32C97 /* JinRongFuWuViewController.m */,
 				376F0C601A4E777C00AAD9C0 /* zhengce.json */,
 				376F0C621A4E78DC00AAD9C0 /* TouXiZhiNanCell.h */,
 				376F0C631A4E78DC00AAD9C0 /* TouXiZhiNanCell.m */,
@@ -1185,12 +1199,15 @@
 				375239B719F3B1680081A7A4 /* xiegeini.html in Resources */,
 				3701B43419BF1D97004F1955 /* Images.xcassets in Resources */,
 				3705917E19E22DE00043FC1B /* UMSocialSDKResourcesNew.bundle in Resources */,
+				37615D2D1A5D778100D32C97 /* jinronfuwu.json in Resources */,
 				3705917819E22DE00043FC1B /* UMSCommentInputControlleriPad.xib in Resources */,
 				3705917919E22DE00043FC1B /* UMShareEditViewController.xib in Resources */,
 				37F5902A19FC9E79006D7AC8 /* xiegeini.jpg in Resources */,
+				37615D311A5D7E8400D32C97 /* hangyedongtai.json in Resources */,
 				3705917D19E22DE00043FC1B /* UMSShareListController.xib in Resources */,
 				3705917419E22DE00043FC1B /* UMSocialLocalizable.strings in Resources */,
 				3701B42619BF1D97004F1955 /* InfoPlist.strings in Resources */,
+				37615D2F1A5D7C4400D32C97 /* zhengfuzijin.json in Resources */,
 				3705918419E22E050043FC1B /* umFeedback.bundle in Resources */,
 				375239B519F3B05E0081A7A4 /* Snippets.plist in Resources */,
 				3705917B19E22DE00043FC1B /* UMSLoginViewController.xib in Resources */,
@@ -1232,6 +1249,7 @@
 				3706B4F619CE8501000647FA /* View+MASAdditions.m in Sources */,
 				3713583D1A05D9F200A4C33A /* FHQPage3.m in Sources */,
 				3709896319E394C300CFFB9C /* UIImage+GIF.m in Sources */,
+				37615D2B1A5D75A500D32C97 /* JinRongFuWuViewController.m in Sources */,
 				3709896119E394C300CFFB9C /* SDWebImagePrefetcher.m in Sources */,
 				376F0C5C1A4E4E6C00AAD9C0 /* ZhengCeViewController.m in Sources */,
 				370591D619E2422C0043FC1B /* ZouJinYuanQuViewController.m in Sources */,

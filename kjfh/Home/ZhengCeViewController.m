@@ -18,6 +18,7 @@ static NSString *TouZiZhiNanSectionIdentifier = @"TouZiZhiNanSectionIdentifier";
 @interface ZhengCeViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,strong) UILabel *titleLabel;
 @end
 
 @implementation ZhengCeViewController
@@ -28,6 +29,15 @@ static NSString *TouZiZhiNanSectionIdentifier = @"TouZiZhiNanSectionIdentifier";
 }
 
 -(void)commonInit{
+    
+    self.titleLabel = [[UILabel alloc]init];
+    self.titleLabel.text = self.navTitle;
+    self.titleLabel.font = [UIFont systemFontOfSize:16];
+    self.titleLabel.textColor = RGB(66, 66, 66);
+    self.titleLabel.backgroundColor = [UIColor clearColor];
+    [self.titleLabel sizeToFit];
+    self.navigationItem.titleView = self.titleLabel;
+    
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
@@ -72,7 +82,7 @@ static NSString *TouZiZhiNanSectionIdentifier = @"TouZiZhiNanSectionIdentifier";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return 30;
+    return self.showSection?30:0;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -87,7 +97,7 @@ static NSString *TouZiZhiNanSectionIdentifier = @"TouZiZhiNanSectionIdentifier";
 -(NSMutableArray *)dataSource{
     if (!_dataSource) {
         _dataSource = [[NSMutableArray alloc]init];
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"zhengce" ofType:@"json"];
+        NSString *path = [[NSBundle mainBundle]pathForResource:self.file ofType:@"json"];
         NSData *data = [[NSData alloc]initWithContentsOfFile:path];
         NSArray *zhengce_array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         for (NSDictionary *dic in zhengce_array) {
@@ -106,6 +116,12 @@ static NSString *TouZiZhiNanSectionIdentifier = @"TouZiZhiNanSectionIdentifier";
         }
     }
     return _dataSource;
+}
+
+-(void)setNavTitle:(NSString *)navTitle{
+    _navTitle = navTitle;
+    self.titleLabel.text = navTitle;
+        [self.titleLabel sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -72,18 +72,18 @@
         make.height.equalTo(@0.5);
     }];
     
-    self.ziXunButton = [[UIButton alloc]init];
-    self.ziXunButton.layer.cornerRadius = 4;
-    self.ziXunButton.layer.masksToBounds = YES;
-    [self.ziXunButton addTarget:self action:@selector(ziXunButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.ziXunButton setBackgroundImage:[UIImage imageWithColor:UIColorFromRGB(0x99C940)] forState:UIControlStateNormal];
-    [self.ziXunButton setTitle:@"入园咨询" forState:UIControlStateNormal];
-    [self.contentView addSubview:self.ziXunButton];
-    [self.ziXunButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.contentView).offset(-5);
-        make.leading.equalTo(self.contentView).offset(5);
-        make.size.equalTo([NSValue valueWithCGSize:CGSizeMake(80, 30)]);
-    }];
+//    self.ziXunButton = [[UIButton alloc]init];
+//    self.ziXunButton.layer.cornerRadius = 4;
+//    self.ziXunButton.layer.masksToBounds = YES;
+//    [self.ziXunButton addTarget:self action:@selector(ziXunButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.ziXunButton setBackgroundImage:[UIImage imageWithColor:UIColorFromRGB(0x99C940)] forState:UIControlStateNormal];
+//    [self.ziXunButton setTitle:@"入园咨询" forState:UIControlStateNormal];
+//    [self.contentView addSubview:self.ziXunButton];
+//    [self.ziXunButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(self.contentView).offset(-5);
+//        make.leading.equalTo(self.contentView).offset(5);
+//        make.size.equalTo([NSValue valueWithCGSize:CGSizeMake(80, 30)]);
+//    }];
     
     self.contentTextView = [[UITextView alloc]init];
     self.contentTextView.contentInset = UIEdgeInsetsMake(5, 0, 10, 0);
@@ -96,7 +96,8 @@
 
     [self.contentTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.sepLine.mas_bottom);
-        make.bottom.equalTo(self.ziXunButton.mas_top).offset(3);
+//        make.bottom.equalTo(self.ziXunButton.mas_top).offset(3);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
         make.leading.trailing.equalTo(self.contentView);
     }];
 

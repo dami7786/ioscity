@@ -77,7 +77,7 @@
 -(void)setModel:(ZhongDianQiYeModel *)model{
     _model = model;
     self.flagView.image = [UIImage imageWithColor:model.flagColor];
-    self.headImage.image = [UIImage imageNamed:@"mail"];
+    self.headImage.image = [UIImage imageNamed:model.img];
     self.titleLabel.text = model.title;
     
 }

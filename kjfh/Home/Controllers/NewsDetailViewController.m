@@ -99,7 +99,31 @@
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     self.favButton.enabled = YES;
     self.shareButton.enabled = YES;
-    [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '200%'"];
+//    [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '300%'"];
+    
+    
+    [webView stringByEvaluatingJavaScriptFromString:
+     @"var tagHead =document.documentElement.firstChild;"
+     "var tagMeta = document.createElement(\"meta\");"
+     "tagMeta.setAttribute(\"content\", \"telephone=no\");"
+     "tagMeta.setAttribute(\"name\", \"format-detection\");"
+     "var tagHeadAdd = tagHead.appendChild(tagMeta);"];
+    
+    [webView stringByEvaluatingJavaScriptFromString:
+     @"var tagHead =document.documentElement.firstChild;"
+     "var tagMeta = document.createElement(\"meta\");"
+     "tagMeta.setAttribute(\"content\", \"yes\");"
+     "tagMeta.setAttribute(\"name\", \"apple-mobile-web-app-capable\");"
+     "var tagHeadAdd = tagHead.appendChild(tagMeta);"];
+    
+    [webView stringByEvaluatingJavaScriptFromString:
+     @"var tagHead =document.documentElement.firstChild;"
+     "var tagMeta = document.createElement(\"meta\");"
+     "tagMeta.setAttribute(\"name\", \"viewport\");"
+     "tagMeta.setAttribute(\"content\", \"width=device-width\");"
+     "var tagHeadAdd = tagHead.appendChild(tagMeta);"];
+    
+
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView{

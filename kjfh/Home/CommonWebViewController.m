@@ -25,7 +25,7 @@
     [super viewDidLoad];
     [self initNav];
     [self commonInit];
-    [self reloadNavItems];
+//    [self reloadNavItems];
     [self themeChangedNotification:nil];
     
     if (self.documentName) {
@@ -43,34 +43,34 @@
 -(void)initNav{
     //标题
     _titleLabel = [[UILabel alloc]init];
-    self.titleLabel.font = [UIFont systemFontOfSize:18];
+    self.titleLabel.font = [UIFont systemFontOfSize:16];
     self.titleLabel.textColor = RGB(66, 66, 66);
     self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.text = self.navTitle;
     [self.titleLabel sizeToFit];
     self.navigationItem.titleView = _titleLabel;
     
-    self.closeButton =  [self createButtonWithTitle:@"关闭"];
-    [self.closeButton addTarget:self  action:@selector(closeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.backButton =  [self createButtonWithTitle:@"返回"];
-    [self.backButton setImage:[UIImage imageNamed:@"heiye_news_fanhui"] forState:UIControlStateNormal];
-    if (IOS7_OR_LATER) {
-        self.backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 0);
-        self.backButton.titleEdgeInsets = UIEdgeInsetsZero;
-    }
-    [self.backButton sizeToFit];
-    [self.backButton addTarget:self  action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    self.closeButton =  [self createButtonWithTitle:@"关闭"];
+//    [self.closeButton addTarget:self  action:@selector(closeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    self.backButton =  [self createButtonWithTitle:@"返回"];
+//    [self.backButton setImage:[UIImage imageNamed:@"heiye_news_fanhui"] forState:UIControlStateNormal];
+//    if (IOS7_OR_LATER) {
+//        self.backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 0);
+//        self.backButton.titleEdgeInsets = UIEdgeInsetsZero;
+//    }
+//    [self.backButton sizeToFit];
+//    [self.backButton addTarget:self  action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
 }
--(UIButton *)createButtonWithTitle:(NSString *)title{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    button.frame = CGRectMake(0.0f, 0.0f, 60.0f, 44.0f);
-    [button setTitle:title forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:16];
-    [button sizeToFit];
-    return button;
-}
+//-(UIButton *)createButtonWithTitle:(NSString *)title{
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    //    button.frame = CGRectMake(0.0f, 0.0f, 60.0f, 44.0f);
+//    [button setTitle:title forState:UIControlStateNormal];
+//    button.titleLabel.font = [UIFont systemFontOfSize:16];
+//    [button sizeToFit];
+//    return button;
+//}
 
 -(void)commonInit{
     _webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
@@ -89,17 +89,17 @@
     }];
 }
 
--(void)reloadNavItems{
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:self.backButton];
-    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc]initWithCustomView:self.closeButton];
-    UIBarButtonItem *moreItem = [[UIBarButtonItem alloc]initWithCustomView:self.moreButton];
-    if (self.showCloseButton) {
-        self.navigationItem.leftBarButtonItems  = @[backItem,closeItem];
-    }else{
-        self.navigationItem.leftBarButtonItem = backItem;
-    }
-    self.navigationItem.rightBarButtonItem = moreItem;
-}
+//-(void)reloadNavItems{
+//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:self.backButton];
+//    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc]initWithCustomView:self.closeButton];
+//    UIBarButtonItem *moreItem = [[UIBarButtonItem alloc]initWithCustomView:self.moreButton];
+//    if (self.showCloseButton) {
+//        self.navigationItem.leftBarButtonItems  = @[backItem,closeItem];
+//    }else{
+//        self.navigationItem.leftBarButtonItem = backItem;
+//    }
+//    self.navigationItem.rightBarButtonItem = moreItem;
+//}
 
 #pragma mark - UIWebViewDelegate
 
@@ -119,6 +119,36 @@
     if (!self.showCloseButton) {
         self.showCloseButton = [self.webView canGoBack];
     }
+//        [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '200%'"];
+    
+ /*
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  */
+    
+    [webView stringByEvaluatingJavaScriptFromString:
+     @"var tagHead =document.documentElement.firstChild;"
+     "var tagMeta = document.createElement(\"meta\");"
+     "tagMeta.setAttribute(\"content\", \"telephone=no\");"
+     "tagMeta.setAttribute(\"name\", \"format-detection\");"
+     "var tagHeadAdd = tagHead.appendChild(tagMeta);"];
+    
+    [webView stringByEvaluatingJavaScriptFromString:
+     @"var tagHead =document.documentElement.firstChild;"
+     "var tagMeta = document.createElement(\"meta\");"
+     "tagMeta.setAttribute(\"content\", \"yes\");"
+     "tagMeta.setAttribute(\"name\", \"apple-mobile-web-app-capable\");"
+     "var tagHeadAdd = tagHead.appendChild(tagMeta);"];
+    
+    [webView stringByEvaluatingJavaScriptFromString:
+     @"var tagHead =document.documentElement.firstChild;"
+     "var tagMeta = document.createElement(\"meta\");"
+     "tagMeta.setAttribute(\"name\", \"viewport\");"
+     "tagMeta.setAttribute(\"content\", \"width=device-width\");"
+     "var tagHeadAdd = tagHead.appendChild(tagMeta);"];
+    
     //    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.backgroundColor='transparent'"];
 }
 
@@ -129,19 +159,19 @@
     }
 }
 #pragma mark - Action
--(void)backButtonClicked:(UIButton *)sender{
-    if(self.webView.canGoBack){
-        [self.webView goBack];
-        [self reloadNavItems];
-    }else{
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
-
--(void)closeButtonClicked:(UIButton *)sender{
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//-(void)backButtonClicked:(UIButton *)sender{
+//    if(self.webView.canGoBack){
+//        [self.webView goBack];
+//        [self reloadNavItems];
+//    }else{
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
+//}
+//
+//-(void)closeButtonClicked:(UIButton *)sender{
+//    
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 #pragma mark - Theme
 

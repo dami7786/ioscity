@@ -45,7 +45,7 @@ static NSString *NewsCellIdentifier = @"NewsCellIdentifier";
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"新闻";
-    titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.font = [UIFont systemFontOfSize:16];
     titleLabel.textColor = RGB(66, 66, 66);
     titleLabel.backgroundColor = [UIColor clearColor];
     [titleLabel sizeToFit];

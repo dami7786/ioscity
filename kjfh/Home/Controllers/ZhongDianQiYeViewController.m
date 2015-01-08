@@ -28,7 +28,7 @@ static NSString *kZhongDianQiYeCellIdentifier = @"ZhongDianQiYeCellIdentifier";
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"重点企业";
-    titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.font = [UIFont systemFontOfSize:16];
     titleLabel.textColor = RGB(66, 66, 66);
     titleLabel.backgroundColor = [UIColor clearColor];
     [titleLabel sizeToFit];
@@ -98,65 +98,7 @@ static NSString *kZhongDianQiYeCellIdentifier = @"ZhongDianQiYeCellIdentifier";
             model.contentStr = qiye_dic[@"content"];
             [_datasource addObject:model];
         }
-        
-        
-//        ZhongDianQiYeModel *model1 = [[ZhongDianQiYeModel alloc]init];
-//        model1.flagColor = UIColorFromRGB(0xAB94C1);
-//        model1.title = @"西安中兴精诚通讯有限公司";
-//        model1.img = @"";
-//        model1.content = @"";
-//        
-//        ZhongDianQiYeModel *model2 = [[ZhongDianQiYeModel alloc]init];
-//        model2.flagColor = UIColorFromRGB(0xF6D944);
-//        model2.title = @"西安优势铁路新技术有限责任公司";
-//        model2.img = @"";
-//        
-//        ZhongDianQiYeModel *model3 = [[ZhongDianQiYeModel alloc]init];
-//        model3.flagColor = UIColorFromRGB(0x56C1CB);
-//        model3.title = @"西安优势物联网科技有限公司";
-//        model3.img = @"";
-//        
-//        ZhongDianQiYeModel *model4 = [[ZhongDianQiYeModel alloc]init];
-//        model4.flagColor = UIColorFromRGB(0x95C33C);
-//        model4.title = @"西安伊洋电子科技有限公司";
-//        model4.img = @"";
-//        
-//        ZhongDianQiYeModel *model5 = [[ZhongDianQiYeModel alloc]init];
-//        model5.flagColor = UIColorFromRGB(0xEE7787);
-//        model5.title = @"西安磁林电气有限公司";
-//        model5.img = @"";
-//        
-//        ZhongDianQiYeModel *model6 = [[ZhongDianQiYeModel alloc]init];
-//        model6.flagColor = UIColorFromRGB(0xAB94C1);
-//        model6.title = @"西安和丰诚信息科技有限公司";
-//        model6.img = @"";
-//        
-//        
-//        ZhongDianQiYeModel *model7 = [[ZhongDianQiYeModel alloc]init];
-//        model7.flagColor = UIColorFromRGB(0xF6D944);
-//        model7.title = @"西安新通药物研究有限公司";
-//        model7.img = @"";
-//        
-//        
-//        ZhongDianQiYeModel *model8 = [[ZhongDianQiYeModel alloc]init];
-//        model8.flagColor = UIColorFromRGB(0x56C1CB);
-//        model8.title = @"深圳市华芯邦科技有限公司";
-//        model8.img = @"";
-//        
-//        
-//        ZhongDianQiYeModel *model9 = [[ZhongDianQiYeModel alloc]init];
-//        model9.flagColor = UIColorFromRGB(0x95C33C);
-//        model9.title = @"陕西亚成微电子股份有限公司";
-//        model9.img = @"";
-//        
-//        
-//        ZhongDianQiYeModel *model10 = [[ZhongDianQiYeModel alloc]init];
-//        model10.flagColor = UIColorFromRGB(0xEE7787);
-//        model10.title = @"陕西三联果业集团有限责任公司";
-//        model10.img = @"";
-//        
-//        _datasource = [@[model1,model2,model3,model4,model5,model6,model7,model8,model9,model10]mutableCopy];
-    }
+      }
     return _datasource;
 }
 

@@ -78,9 +78,10 @@
     self.titleLabel.text = model.title;
     
     self.hotFlag.hidden = !model.hot;
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-    }];
+    self.headImageView.image = [UIImage imageNamed:model.img];
+//    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        
+//    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -13,6 +13,7 @@
 #import "MZBookShelfCollectionViewLayout.h"
 #import "ZhengCeViewController.h"
 #import "CommonWebViewController.h"
+#import "JinRongFuWuViewController.h"
 static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 
 @interface TouZiZhiNanViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
@@ -34,17 +35,17 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 //设置导航栏
 - (void)initNavBar {
     
-//    //左侧按钮
-//    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [addButton setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
-//    [addButton addTarget:self  action:@selector(addButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-//    [addButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-//    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:addButton];
-//    [self.navigationItem setRightBarButtonItem:leftButton animated:NO];
+    //    //左侧按钮
+    //    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //    [addButton setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
+    //    [addButton addTarget:self  action:@selector(addButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    //    [addButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    //    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:addButton];
+    //    [self.navigationItem setRightBarButtonItem:leftButton animated:NO];
     //标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = @"投资指南";
-    titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.font = [UIFont systemFontOfSize:16];
     titleLabel.textColor = RGB(66, 66, 66);
     titleLabel.backgroundColor = [UIColor clearColor];
     [titleLabel sizeToFit];
@@ -98,20 +99,46 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    ZhengCeViewController *viewController = [[ZhengCeViewController alloc]init];
-//    viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    viewController.view.backgroundColor = [UIColor whiteColor];
-//    [self presentViewController:viewController animated:YES completion:^{
-//        
-//    }];
-    [self.navigationController pushViewController:viewController animated:YES];
     
+    if (indexPath.row == 0) {
+        ZhengCeViewController *viewController = [[ZhengCeViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor whiteColor];
+        viewController.file = @"zhengce";
+        viewController.navTitle = @"孵化器政策";
+        viewController.showSection = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
     
+    if (indexPath.row == 1) {
+        JinRongFuWuViewController *jinRongController = [[JinRongFuWuViewController alloc]init];
+        jinRongController.view.backgroundColor = [UIColor whiteColor];
+        [self.navigationController pushViewController:jinRongController animated:YES];
+    }
     
-//    CommonWebViewController *webViewController = [[CommonWebViewController alloc]init];
-//    webViewController.documentName = @"132.doc";
-//    [self.navigationController pushViewController:webViewController animated:YES];
+    if(indexPath.row == 2){
+        CommonWebViewController *webViewController = [[CommonWebViewController alloc]init];
+        webViewController.requestUrl = @"http://www.xihupark.com/web/messege!queryForDis.action?ggtableId=m-3-1";
+        webViewController.navTitle = @"入园流程";
+        [self.navigationController pushViewController:webViewController animated:YES];
+    }
     
+    if (indexPath.row == 3) {
+        ZhengCeViewController *viewController = [[ZhengCeViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor whiteColor];
+        viewController.file = @"zhengfuzijin";
+        viewController.navTitle = @"政府资金申请";
+        viewController.showSection = NO;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    
+    if (indexPath.row == 4) {
+        ZhengCeViewController *viewController = [[ZhengCeViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor whiteColor];
+        viewController.file = @"hangyedongtai";
+        viewController.navTitle = @"行业发展动态";
+        viewController.showSection = NO;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(0, 5,0, 5);
@@ -122,7 +149,7 @@ static NSString * kTouZiZhiNanCellIdentifier = @"TouZiZhiNanCellIdentifier";
 }
 
 - (UIOffset)collectionView:(UICollectionView *)collectionView layout:(MZBookshelfCollectionViewLayout *)collectionViewLayout decorationViewAdjustmentForRow:(NSInteger)row inSection:(NSInteger)section{
-
+    
     return UIOffsetMake(0, -15);
 }
 
