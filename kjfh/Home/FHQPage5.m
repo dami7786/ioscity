@@ -19,12 +19,14 @@
     self = [super initWithFrame:frame];
     if (self) {
         _imageView = [[UIImageView alloc]init];
-        _imageView.image = [UIImage imageNamed:@"zoujinyuanqu_1"];
+        _imageView = [[UIImageView alloc]init];
+        _imageView.image = [UIImage imageNamed:@"fuhuaqi_5"];
         [self addSubview:_imageView];
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
         }];
         self.backgroundColor = [UIColor redColor];
+
     }
     return self;
 }
