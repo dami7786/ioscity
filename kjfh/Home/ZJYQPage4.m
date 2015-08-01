@@ -58,7 +58,7 @@
             make.top.equalTo(self.iconImageView.mas_bottom).offset(5);
             make.left.equalTo(self.mas_left);
             make.right.equalTo(self.mas_right);
-            make.height.equalTo(0.5);
+            make.height.equalTo(@0.5);
         }];
      
         _textView = [[UITextView alloc]init];

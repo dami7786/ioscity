@@ -30,7 +30,7 @@
         
         UIEdgeInsets inset = UIEdgeInsetsMake(2,7,2,7);
         [_contentHolder mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(inset);
+            make.edges.mas_equalTo(inset);
         }];
         
         _hotFlag = [[UIImageView alloc]init];
@@ -38,8 +38,8 @@
         self.hotFlag.hidden = YES;
         [self.contentHolder addSubview:_hotFlag];
         [_hotFlag mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(_contentHolder.bottom).offset(-2);
-            make.right.equalTo(_contentHolder.right).offset(-2);
+            make.bottom.equalTo(_contentHolder.mas_bottom).offset(-2);
+            make.right.equalTo(_contentHolder.mas_right).offset(-2);
             make.width.equalTo(@44);
             make.height.equalTo(@44);
         }];
@@ -47,9 +47,9 @@
         _headImageView = [[UIImageView alloc]init];
         [self.contentHolder addSubview:_headImageView];
         [_headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_contentHolder.left).offset(2);
-            make.top.equalTo(_contentHolder.top).offset(2);
-            make.bottom.equalTo(_contentHolder.bottom).offset(-2);
+            make.left.equalTo(_contentHolder.mas_left).offset(2);
+            make.top.equalTo(_contentHolder.mas_top).offset(2);
+            make.bottom.equalTo(_contentHolder.mas_bottom).offset(-2);
             make.width.equalTo(@120);
         }];
         
@@ -61,9 +61,9 @@
         self.titleLabel.textColor = UIColorFromRGB(0x666666);
         [self.contentHolder addSubview:_titleLabel];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_headImageView.right).offset(4);
-            make.right.equalTo(_contentHolder.right).offset(-4);
-            make.top.equalTo(_contentHolder.top).offset(4);
+            make.left.equalTo(_headImageView.mas_right).offset(4);
+            make.right.equalTo(_contentHolder.mas_right).offset(-4);
+            make.top.equalTo(_contentHolder.mas_top).offset(4);
         }];
         
         self.backgroundColor = UIColorFromRGB(0xF2F1ED);

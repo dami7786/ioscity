@@ -59,9 +59,9 @@
     
     UIView* contentView = [[UIView alloc]init];
     [self.scrollView addSubview:contentView];
-    [contentView makeConstraints:^(MASConstraintMaker *make) {
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.scrollView);
-        make.height.equalTo(self.scrollView.height);
+        make.height.equalTo(self.scrollView.mas_height);
     }];
     
     FHQPage1 *page1 = [[FHQPage1 alloc]init];
@@ -69,26 +69,26 @@
     [page1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
         make.left.equalTo(@0);
-        make.width.equalTo(SCREEN_WIDTH);
-        make.height.equalTo(contentView.height);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.height.equalTo(contentView.mas_height);
     }];
     
     FHQPage2 *page2 = [[FHQPage2 alloc]init];
     [contentView addSubview:page2];
     [page2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
-        make.left.equalTo(page1.right);
-        make.width.equalTo(SCREEN_WIDTH);
-        make.height.equalTo(contentView.height);
+        make.left.equalTo(page1.mas_right);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.height.mas_equalTo(contentView.mas_height);
     }];
     
     FHQPage3 *page3 = [[FHQPage3 alloc]init];
     [contentView addSubview:page3];
     [page3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
-        make.left.equalTo(page2.right);
-        make.width.equalTo(SCREEN_WIDTH);
-        make.height.equalTo(contentView.height);
+        make.left.equalTo(page2.mas_right);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.height.equalTo(contentView.mas_height);
     }];
     
     
@@ -96,9 +96,9 @@
     [contentView addSubview:page4];
     [page4 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
-        make.left.equalTo(page3.right);
-        make.width.equalTo(SCREEN_WIDTH);
-        make.height.equalTo(contentView.height);
+        make.left.equalTo(page3.mas_right);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.height.equalTo(contentView.mas_height);
     }];
     
     
@@ -106,15 +106,15 @@
     [contentView addSubview:page5];
     [page5 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
-        make.left.equalTo(page4.right);
+        make.left.equalTo(page4.mas_right);
         make.width.equalTo(@(SCREEN_WIDTH));
-        make.height.equalTo(contentView.height);
+        make.height.equalTo(contentView.mas_height);
     }];
     UIView *sizingView = UIView.new;
     [self.scrollView addSubview:sizingView];
-    [sizingView makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(page5.right);
-        make.right.equalTo(contentView.right);
+    [sizingView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(page5.mas_right);
+        make.right.equalTo(contentView.mas_right);
     }];
     
     _pageControl = [[UIPageControl alloc]init];

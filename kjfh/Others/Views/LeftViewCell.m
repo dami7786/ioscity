@@ -42,9 +42,9 @@ const NSInteger KSpace8 = 8;
         //自动布局
         [self.holderView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).offset(KSpace8);
-            make.right.equalTo(self.contentView.right).offset(-KSpace8);
-            make.top.equalTo(self.contentView.top);
-            make.bottom.equalTo(self.contentView.bottom);
+            make.right.equalTo(self.contentView.mas_right).offset(-KSpace8);
+            make.top.equalTo(self.contentView.mas_top);
+            make.bottom.equalTo(self.contentView.mas_bottom);
         }];
         //图片
         _headIamgeView = [[UIImageView alloc]init];

@@ -91,8 +91,8 @@
     button2_imageView.image = [UIImage imageNamed:@"image"];
     [button2 addSubview:button2_imageView];
     [button2_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(button2.centerX);
-        make.centerY.equalTo(button2.centerY).offset(-10);
+        make.centerX.equalTo(button2.mas_centerX);
+        make.centerY.equalTo(button2.mas_centerY).offset(-10);
     }];
     UILabel *button2_titleLabel = [[UILabel alloc]init];
     button2_titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -101,8 +101,8 @@
     button2_titleLabel.textColor = UIColorFromRGB(0xFFFFFF);
     [button2 addSubview:button2_titleLabel];
     [button2_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(button2.centerX);
-        make.top.equalTo(button2_imageView.bottom);//.offset(padding);
+        make.centerX.equalTo(button2.mas_centerX);
+        make.top.equalTo(button2_imageView.mas_bottom);//.offset(padding);
     }];
     
     //第三个视图
@@ -116,8 +116,8 @@
     button3_imageView.image = [UIImage imageNamed:@"news"];
     [button3 addSubview:button3_imageView];
     [button3_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(button3.centerX);
-        make.centerY.equalTo(button3.centerY).offset(-10);
+        make.centerX.equalTo(button3.mas_centerX);
+        make.centerY.equalTo(button3.mas_centerY).offset(-10);
     }];
     
     UILabel *button3_tileLabel = [[UILabel alloc]init];
@@ -127,8 +127,8 @@
     button3_tileLabel.textColor = UIColorFromRGB(0xFFFFFF);
     [button3 addSubview:button3_tileLabel];
     [button3_tileLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(button3.centerX);
-        make.bottom.equalTo(button3.bottom).offset(-5);
+        make.centerX.equalTo(button3.mas_centerX);
+        make.bottom.equalTo(button3.mas_bottom).offset(-5);
     }];
     
     //第四个视图
@@ -142,8 +142,8 @@
     button4_imageView.image = [UIImage imageNamed:@"zhinan"];
     [button4 addSubview:button4_imageView];
     [button4_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(button4.centerX);
-        make.centerY.equalTo(button4.centerY).offset(-10);
+        make.centerX.equalTo(button4.mas_centerX);
+        make.centerY.equalTo(button4.mas_centerY).offset(-10);
     }];
     
     UILabel *button4_tileLabel = [[UILabel alloc]init];
@@ -153,8 +153,8 @@
     button4_tileLabel.textColor = UIColorFromRGB(0xFFFFFF);
     [button4 addSubview:button4_tileLabel];
     [button4_tileLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(button4.centerX);
-        make.top.equalTo(button4_imageView.bottom);//.offset(padding);
+        make.centerX.equalTo(button4.mas_centerX);
+        make.top.equalTo(button4_imageView.mas_bottom);//.offset(padding);
     }];
     
     //第五个视图
@@ -168,8 +168,8 @@
     button5_imageView.image = [UIImage imageNamed:@"fuhuaqi"];
     [button5 addSubview:button5_imageView];
     [button5_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(button5.left).offset(8);
-        make.centerY.equalTo(button5.centerY);
+        make.left.equalTo(button5.mas_left).offset(8);
+        make.centerY.equalTo(button5.mas_centerY);
     }];
     
     UILabel *button5_titleLabel = [[UILabel alloc]init];
@@ -179,8 +179,8 @@
     button5_titleLabel.textColor = UIColorFromRGB(0xFFFFFF);
     [button5 addSubview:button5_titleLabel];
     [button5_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(button5.right).offset(-padding);
-        make.centerY.equalTo(button5.centerY);
+        make.right.equalTo(button5.mas_right).offset(-padding);
+        make.centerY.equalTo(button5.mas_centerY);
     }];
     
     //第六个视图
@@ -197,7 +197,7 @@
     button6_titleLabel.textColor = UIColorFromRGB(0xFFFFFF);
     [button6 addSubview:button6_titleLabel];
     [button6_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(button6.center);
+        make.centerX.centerY.equalTo(button6);
     }];
     
     
@@ -208,46 +208,46 @@
         make.left.equalTo(superView.mas_left).offset(padding);
         make.right.equalTo(superView.mas_right).offset(-padding);
         make.top.equalTo(superView.mas_top).offset(padding);
-        make.height.equalTo(superView.height).multipliedBy(0.35);
+        make.height.equalTo(superView.mas_height).multipliedBy(0.35);
     }];
     
     [button2 mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.equalTo(superView.mas_left).offset(padding);
-        make.width.equalTo(superView.width).with.offset(-30).multipliedBy(0.5);
-        make.top.equalTo(button1.bottom).offset(10);
-        make.height.equalTo(superView.height).multipliedBy(0.25);
+        make.width.equalTo(superView.mas_width).with.offset(-30).multipliedBy(0.5);
+        make.top.equalTo(button1.mas_bottom).offset(10);
+        make.height.equalTo(superView.mas_height).multipliedBy(0.25);
         
     }];
     
     [button3 mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.equalTo(superView.mas_left).offset(padding);
-        make.width.equalTo(superView.width).with.offset(-30).multipliedBy(0.5);
-        make.top.equalTo(button2.bottom).offset(10);
+        make.width.equalTo(superView.mas_width).with.offset(-30).multipliedBy(0.5);
+        make.top.equalTo(button2.mas_bottom).offset(10);
         make.height.equalTo(superView).multipliedBy(0.17);
     }];
     
     [button4 mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(button1.bottom).offset(10);
-        make.left.equalTo(button2.right).offset(10);
-        make.right.equalTo(superView.right).offset(-padding);
-        make.bottom.equalTo(button3.bottom);
+        make.top.equalTo(button1.mas_bottom).offset(10);
+        make.left.equalTo(button2.mas_right).offset(10);
+        make.right.equalTo(superView.mas_right).offset(-padding);
+        make.bottom.equalTo(button3.mas_bottom);
     }];
     
     [button5 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(button4.bottom).offset(padding);
-        make.bottom.equalTo(superView.bottom).offset(-padding);
-        make.left.equalTo(superView.left).offset(padding);
-        make.width.equalTo(superView.width).with.offset(-30).multipliedBy(0.75);
+        make.top.equalTo(button4.mas_bottom).offset(padding);
+        make.bottom.equalTo(superView.mas_bottom).offset(-padding);
+        make.left.equalTo(superView.mas_left).offset(padding);
+        make.width.equalTo(superView.mas_width).with.offset(-30).multipliedBy(0.75);
     }];
     
     [button6 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(button4.bottom).offset(padding);
-        make.bottom.equalTo(superView.bottom).offset(-padding);
-        make.right.equalTo(superView.right).offset(-padding);
-        make.left.equalTo(button5.right).offset(padding);
+        make.top.equalTo(button4.mas_bottom).offset(padding);
+        make.bottom.equalTo(superView.mas_bottom).offset(-padding);
+        make.right.equalTo(superView.mas_right).offset(-padding);
+        make.left.equalTo(button5.mas_right).offset(padding);
     }];
     
     

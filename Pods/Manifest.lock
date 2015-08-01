@@ -1,0 +1,35 @@
+PODS:
+  - Masonry (0.6.2)
+  - MBProgressHUD (0.9.1)
+  - MMDrawerController (0.5.7):
+    - MMDrawerController/Core (= 0.5.7)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
+    - MMDrawerController/MMDrawerVisualStates (= 0.5.7)
+    - MMDrawerController/Subclass (= 0.5.7)
+  - MMDrawerController/Core (0.5.7)
+  - MMDrawerController/MMDrawerBarButtonItem (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.5.7):
+    - MMDrawerController/Core
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - tingyunApp (2.1.4.2)
+
+DEPENDENCIES:
+  - Masonry
+  - MBProgressHUD
+  - MMDrawerController
+  - SDWebImage
+  - tingyunApp
+
+SPEC CHECKSUMS:
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  tingyunApp: efb78cc02d0e9d03f713605b0c5666fbc913a2a8
+
+COCOAPODS: 0.38.2

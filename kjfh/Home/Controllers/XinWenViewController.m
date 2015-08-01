@@ -62,9 +62,9 @@ static NSString *NewsCellIdentifier = @"NewsCellIdentifier";
     [self.view addSubview:_tableView];
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.top);
-        make.bottom.equalTo(self.view.bottom);
-        make.width.equalTo(self.view.width);
+        make.top.equalTo(self.view.mas_top);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.width.equalTo(self.view.mas_width);
     }];
 }
 

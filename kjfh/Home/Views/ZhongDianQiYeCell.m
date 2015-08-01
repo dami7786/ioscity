@@ -51,8 +51,8 @@
         [self.holderView addSubview:_headImage];
         [self.headImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.flagView.mas_right);
-            make.top.equalTo(self.holderView.top);
-            make.height.equalTo(self.holderView.height);
+            make.top.equalTo(self.holderView.mas_top);
+            make.height.equalTo(self.holderView.mas_height);
             make.width.equalTo(@160);
         }];
         
